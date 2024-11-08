@@ -1,0 +1,83 @@
+@media screen and (max-width: 1400px){
+    #profile{
+        height: 83vh;
+        margin-bottom: 6rem;
+    }
+
+    .about-containers{
+        flex-wrap: wrap;
+    }
+}
+
+
+
+
+@media screen and (max-width: 1200px){
+    #desktop-nav{
+        display: none;
+    }
+
+    #fall-nav{
+        display: flex;
+        visibility: visible;
+    }
+    #proflie,.section-container{
+        display: block;
+    }
+    .arrow{
+        display: none;
+    }
+    section, .section-container{
+        display: block;
+    }
+    section{
+        margin: 0 5%;
+    }
+    .section_pic-container{
+        width: 275px;
+        height: 275px;
+        margin: 0 auto 2rem;
+    }
+    .about-containers{
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 600px){
+    #contact, footer{
+        height: 30vh;
+    }
+    #profile{
+        height: 83vh;
+        margin-bottom: 0;
+    }
+    footer nav{
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+    .about-containers, .contact-info-upper-container, .btn-container{
+        flex-wrap: wrap;
+    }
+    .contact-info-container{
+        margin: 0;
+    }
+    .contact-info-container p, .nav-links li a{
+        font-size: 1rem;
+    }
+    
+}
+
+
+
+/*If Screen is smaller than 1200px doesnt show the bar
+but insated the drop down menu*/
+@media screen and (max-width: 800px){
+    .skills-grid{
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 650px){
+    .section_pic-container{
+        display: none;
+    }
+}

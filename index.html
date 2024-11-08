@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tristans Portfolio</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="mediainqueries.css"/>
+</head>
+<body>
+    <!-- /*Nav html*/ -->
+    <nav id= "desktop-nav">
+        <div class="name">Welcome!</div>
+        <div class = "home">
+            <img src="./Images/home.png" alt="Home Photo"
+            onclick="location.href='./#desktop-nav'">
+        </div>
+
+        <div>
+            <ul class = "nav-links">
+                <li><a href="#about"> About</a> </li>
+                <li><a href="#skills"> Skills</a> </li>
+                <li><a href="#projects"> Projects</a> </li>
+                <li><a href="#contact"> Contact</a> </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Fall navigation for smaller screens -->
+    <nav id="fall-nav"> 
+        <div class="name">Welcome!</div>
+        <div class="fall-menu">
+            <div class = "fall-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()"> About</a> </li>
+                <li><a href="#skills" onclick="toggleMenu()"> Skills</a> </li>
+                <li><a href="#projects" onclick="toggleMenu()"> Projects</a> </li>
+                <li><a href="#contact"onclick="toggleMenu()"> Contact</a> </li>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Profile Section -->
+    <section id="profile">
+            <div class="section_pic-container">
+                <img src="./Images/Profile_pic_1.png" alt="Tristan Beley Profile Pic ">
+            </div>
+
+            <div class ="section__text">
+                <p class="section__text__p1">Hello, I am</p>
+                <h1 class = "title"> Tristan Beley</h1>
+                <p class = "section__text__p2">Software Engineering Student</p>
+
+                <div class="btn-container">
+                        <button class = "btn btn-color-2" 
+                        onclick = "window.open('./Images/Resume.pdf')"
+                        >Download Resume
+                    </button>
+
+                    <button class = "btn btn-color-1" 
+                        onclick = "location.href='./#contact'"> 
+                        Contact Info
+                    </button>
+                    </div>
+                    <div id="socials-container">
+                        <img src="./Images/LIlogo.png" 
+                        alt="Personal GitHub profile"
+                        class = "icon1" 
+                        onclick = "location.href='https://www.linkedin.com/in/tristan-beley-112652293/'"
+                        />
+
+                        <img src="./Images/githublogo.png" 
+                        alt="Personal LinkeIN profile"
+                        class = "icon2" 
+                        onclick = "location.href='https://github.com/tristanbeley92'"
+                        />
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">   
+        <p class ="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class = "section_pic-container2">
+                    <img src="./Images/Imagehockey.png" alt="Experience Photo"
+                    class = "about-pic">
+            </div>
+
+            <div class ="about-details-container">
+                <div class = "about-containers">
+                    <div class = "details-container">
+                        <img src="./Images/expicon.png" alt="Experience icon"
+                        class ="iconexp">
+                        <h3>Experience</h3>
+                        <p2>Assitant Project Manager |APR 2024 - AUG 2024| <br /> Member Services Attendent |Apr 2023 - Aug 2024|</p2>
+                    </div>
+                    <div class ="details-container">
+                        <img src="./Images/eduicon.png" alt="Education icon"
+                        class ="iconedu">
+                        <h3>Education</h3>
+                        <p2>I am currently a second year student studying<br />Software Engineering At University of Western</p2>
+
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>Hi there! I am Tristan Beley, a driven individual with a passion for learning, 
+                        and I have hands-on experience in Project Management and Customer Service. 
+                        Over the past two summers, I have worked as an Assistant Project Manager for a 
+                        general contracting company and at a private country club, where I honed my skills 
+                        in leadership, effective communication, teamwork, and adaptability.
+                        As a lifelong competitive hockey player, I bring the discipline and strong work ethic 
+                        I developed on the ice into my professional life. I am passionate about problem-solving 
+                        and finding solutions to challenges with a proactive mindset. I am eager to apply my technical skills and determination to a software oriented environment! </p>
+                </div>
+            </div>
+        </div>
+        <img src="./Images/arrowicon.png" alt="Arrow" class="icon arrow"
+        onclick="location.href='./#skills'"
+        />
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <p class= section__text__p1>Explore My</p>
+        <h1 class="title">Skills</h1>                   
+                        <div class ="skills-grid">
+                            <div class="skill-item ">
+                                <img src="./Images/htmllogo.png" alt="HTMLlogo"
+                                class = "icon4"
+                                >
+                                <div>
+                                    <h3>HTML</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+                           
+                            <div class="skill-item ">
+                                <img src="./Images/csslogo.png" alt="csslogo"
+                                class = "icon4"
+                                >
+                                <div>
+                                    <h3>CSS</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+                            
+                             <div class="skill-item ">
+                                <img src="./Images/c++logo.png" alt="c++logo"
+                                class = "icon4"
+                                >
+                                <div>
+                                    <h3>C++</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </div>
+                            
+                             <div class="skill-item2 ">
+                                <img src="./Images/Java-Logo.png" alt="javalogo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>Java</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item ">
+                                <img src="./Images/jslogo.png" alt="jslogo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>CSS</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </div>
+                           
+                            <div class="skill-item ">
+                                <img src="./Images/pmlogo.png" alt="pmlogo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>Project Managment</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+                        </div>
+    </section>
+
+    <!-- Projects sections -->
+    <section id="projects">
+        <p class="section__text__p1"> Browse My Recent and Upcoming</p>
+        <h1 class="title">Projects</h1>
+        <div class = "experience-details-container">
+            <div class="about-containers">
+
+                <div class = "details-container color-container">
+                    <div class="article container">
+                        <img src="./Images/portfolioicon.png" 
+                        alt="Project"
+                        class = "projects-img">
+                    </div>
+                    <h2 class = "experience sub tite project-title"> Portfolio Completion</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.
+                        href='https://github.com/tristanbeley92/Portfolio_Beley'"
+                        >
+                            Githhub
+                        </button>
+                    </div>
+                </div>
+                <div class = "details-container color-container">
+                    <div class="article container">
+                        <img src="./Images/musicicon.png" 
+                        alt="Project 2"
+                        class = "projects-img">
+                    </div>
+                    <h2 class = "experience sub tite project-title"> Adaptive Playlist Generator</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                        >
+                            In Progress
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id = "contact">
+        <p class="section__text__p1">Get In Touch</p>
+        <h1 class ="title"> Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img 
+                src="Images/mailicon.png" 
+                alt="Mail icon"
+                class = "icon contact-icon"
+                />
+                <p><a href="mailto:tristanbeley@gmail.com">tristanbeley@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img 
+                src="Images/LIlogo.png" 
+                alt="LinkedIn icon"
+                class = "icon contact-icon-linked-icon"
+                />
+                <p><a href="https://www.linkedin.com/in/tristan-beley-112652293/">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer>
+    <nav>
+        <div class="nav-links-container"> 
+            <ul class = "nav-links">
+                <li><a href="#about"> About</a> </li>
+                <li><a href="#skills"> Skills</a> </li>
+                <li><a href="#projects"> Projects</a> </li>
+                <li><a href="#contact"> Contact</a> </li>
+            </ul>
+        </div>
+    </nav>
+    <p>Created by Tristan Beley &#169;</p>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
