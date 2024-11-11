@@ -63,7 +63,13 @@
     .contact-info-container p, .nav-links li a{
         font-size: 1rem;
     }
-    
+    .about-containers{
+        margin-top: 3px;
+    }
+    .section_pic-container2{
+        padding-bottom: 1rem;
+        padding-left: 5rem;
+    }
 }
 
 
