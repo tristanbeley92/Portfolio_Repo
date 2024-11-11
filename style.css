@@ -111,7 +111,6 @@ a:hover{
     position: absolute;
     top: 100%;
     right: 0%;
-    background-color: white;
     width: fit-content;
     max-height: 0;
     overflow: hidden;
@@ -120,9 +119,9 @@ a:hover{
 
 .menu-links a{
     display: block;
-    padding: 10px;
+    padding: 13px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: black;
     text-decoration: none;
     transition: all 0.3 ease-in-out;

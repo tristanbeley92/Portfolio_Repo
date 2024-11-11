@@ -13,6 +13,11 @@
 
 
 @media screen and (max-width: 1200px){
+    #profile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     #desktop-nav{
         display: none;
     }
@@ -21,7 +26,7 @@
         display: flex;
         visibility: visible;
     }
-    #proflie,.section-container{
+    .section-container{
         display: block;
     }
     .arrow{
@@ -37,25 +42,39 @@
         width: 275px;
         height: 275px;
         margin: 0 auto 2rem;
+        padding-right: 10%;
     }
     .about-containers{
         margin-top: 0;
     }
+    .section_pic-container2{
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 275px;
+        margin: 0 auto;
+    }
 }
+
 @media screen and (max-width: 600px){
     #contact, footer{
-        height: 30vh;
+        height: 10vh;
     }
     #profile{
-        height: 83vh;
+        height: 50vh;
         margin-bottom: 0;
     }
     footer nav{
         height: fit-content;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 3rem;
     }
     .about-containers, .contact-info-upper-container, .btn-container{
         flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
     }
     .contact-info-container{
         margin: 0;
@@ -68,7 +87,28 @@
     }
     .section_pic-container2{
         padding-bottom: 1rem;
-        padding-left: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 275px;
+        margin: 0 auto;
+    }
+
+    .about-containers{
+        font-size: .85rem;
+        line-height: 1.5;
+        max-width: 200px; 
+        margin: 0 auto; 
+        text-align: justify; 
+        padding: 1rem; 
+    }
+
+}
+
+@media screen and (max-width: 380px){
+    .about-containers{
+        font-size: .8rem;
     }
 }
 
