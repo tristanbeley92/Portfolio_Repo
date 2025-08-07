@@ -363,8 +363,8 @@ section{
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);  /*(2,1fr) */
-    gap: 2rem; /* Space between items */
+    grid-template-columns: repeat(3,1fr);  /*(2,1fr) */
+    gap: 5rem; /* Space between items */
     justify-items: center; 
     align-items: center; /* Center-align items vertically */
     margin: 2rem auto;
