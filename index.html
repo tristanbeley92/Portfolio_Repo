@@ -19,7 +19,7 @@
         <div>
             <ul class = "nav-links">
                 <li><a href="#about"> About</a> </li>
-                <li><a href="#skills"> Skills</a> </li>
+                <li><a href="javascript:void(0)" onclick="scrollToNext()"> Skills</a> </li> <!-- Added JS function to scroll smoothly to skills section, overide manual easier than changing just one -->
                 <li><a href="#projects"> Projects</a> </li>
                 <li><a href="#contact"> Contact</a> </li>
             </ul>
@@ -98,7 +98,7 @@
                         <img src="./Images/expicon.png" alt="Experience icon"
                         class ="iconexp">
                         <h3>Experience</h3>
-                        <p2>Assitant Project Manager |APR 2024 - AUG 2024| <br /> Member Services Attendent |Apr 2023 - Present|</p2>
+                        <p2>Assitant Project Manager |APR 2024 - AUG 2024| <br /> Member Services Lead |Apr 2023 - Present|</p2>
                     </div>
                     <div class ="details-container">
                         <img src="./Images/eduicon.png" alt="Education icon"
@@ -109,19 +109,21 @@
                     </div>
                 </div>
                 <div class="text-container">
-                    <p>Let me introduce myself! My name is Tristan Beley, and I am driven individual with a passion for learning, 
-                        and I have hands-on experience in Project Management and Customer Service. 
-                        Over the past three summers, I have worked as an Assistant Project Manager for a 
-                        general contracting company and at a private country club, where I honed my skills 
-                        in leadership, effective communication, teamwork, and adaptability.
-                        As a lifelong competitive hockey player, I bring the discipline and strong work ethic 
-                        I developed on the ice into my professional life. I am passionate about problem-solving 
-                        and finding solutions to challenges with a proactive mindset. I am eager to apply my technical skills and determination to a software oriented environment! </p>
+                    <h4>Let me introduce myself!</h4> 
+                        <p>My name is Tristan Beley, and I am a motivated Software Engineering student with a 
+                        passion for learning and bulding practical soltuions through code. I have gained hands-on 
+                        experience in both project management and customer-facing roles, having worked as an Assistant 
+                        Project Manager at a general contracting company and as a Backshop Team Lead at private 
+                        country club. These experiencnes have sharpned my communication, leadership, and adaptability, 
+                        skills I now utilize during my studies and in my personal software projects. As a lifelong competitive
+                        hockety player, I have developed a strong discipline and work ethic that I now apply to debugging tough problems 
+                        and writing clean scalable code. Im excited to grow in a development dirven enviroment where I can 
+                        apply my technical background, creativity and problem solving mindset to real-world challenges!</p>  
                 </div>
             </div>
         </div>
         <img src="./Images/arrowicon.png" alt="Arrow" class="icon arrow"
-        onclick="location.href='./#skills'"
+        onclick="scrollToNext()"
         />
     </section>
 
@@ -131,13 +133,38 @@
         <h1 class="title">Skills</h1>                   
                         <div class ="skills-grid">
                             
-                             <div class="skill-item ">
-                                <img src="./Images/Clogo.png" alt="clogo"
-                                class = "icon4"
+
+                            <div class="skill-item ">
+                                <img src="./Images/pythonlogo.png" alt="pylogo"
+                                class = "icon5"
                                 >
                                 <div>
-                                    <h3>C</h3>
-                                    <p>Intermediate</p>
+                                    <h3>Python</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+
+                            <div class="skill-item ">
+                                <img src="./Images/sqllogo.png" alt="sqllogo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>SQL</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+
+
+                             <div class="skill-item ">
+                                <div class="card-inner">
+
+                                    <!--Front-->
+                                    <div class = "card-front">
+                                        <img src="./Images/Clogo.png" alt="clogo" class = "icon4">
+                                        <h3>C</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -218,7 +245,7 @@
                                     <h3>Git/Version Control</h3>
                                     <p>Experienced</p>
                                 </div>
-                            </div>  
+                            </div>  `
 
                         </div>
     </section>
