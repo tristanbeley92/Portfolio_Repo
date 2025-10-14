@@ -5,7 +5,7 @@ function toggleMenu(){
     i.classList.toggle("open");
 }
 
-function scrollToNext() {
+function scrollToSkills() {
     const skillsSection = document.getElementById('skills');
     const offset = -110; // adjusted for proper scrolling to the skills section 
     const y = skillsSection.getBoundingClientRect().top + window.scrollY - offset;

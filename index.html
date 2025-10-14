@@ -19,7 +19,7 @@
         <div>
             <ul class = "nav-links">
                 <li><a href="#about"> About</a> </li>
-                <li><a href="javascript:void(0)" onclick="scrollToNext()"> Skills</a> </li> <!-- Added JS function to scroll smoothly to skills section, overide manual easier than changing just one -->
+                <li><a href="javascript:void(0)" onclick="scrollToSkills()"> Skills</a> </li> <!-- Added JS function to scroll smoothly to skills section, overide manual easier than changing just one -->
                 <li><a href="#projects"> Projects</a> </li>
                 <li><a href="#contact"> Contact</a> </li>
             </ul>
@@ -123,7 +123,7 @@
             </div>
         </div>
         <img src="./Images/arrowicon.png" alt="Arrow" class="icon arrow"
-        onclick="scrollToNext()"
+        onclick="scrollToSkills()"
         />
     </section>
 
@@ -155,18 +155,14 @@
                             </div>
 
 
-                             <div class="skill-item ">
-                                <div class="card-inner">
-
-                                    <!--Front-->
-                                    <div class = "card-front">
-                                        <img src="./Images/Clogo.png" alt="clogo" class = "icon4">
-                                        <h3>C</h3>
-                                        <p>Intermediate</p>
-                                    </div>
-
+                            <div class="skill-item ">
+                                <img src="./Images/Clogo.png" alt="clogo" class = "icon5">
+                                <div>
+                                    <h3>C</h3>
+                                    <p>Intermediate</p>
                                 </div>
                             </div>
+
 
                             <div class="skill-item ">
                                 <img src="./Images/csharplogo.png" alt="c#logo"
@@ -178,7 +174,7 @@
                                 </div>
                             </div>
                             
-                             <div class="skill-item2 ">
+                             <div class="skill-item ">
                                 <img src="./Images/Java-Logo.png" alt="javalogo"
                                 class = "icon5"
                                 >
@@ -219,11 +215,11 @@
                             </div>
                            
                             <div class="skill-item ">
-                                <img src="./Images/figma_icon.png" alt="figmalogo"
+                                <img src="./Images/typescript_logo.png" alt="typescript_logo"
                                 class = "icon5"
                                 >
                                 <div>
-                                    <h3>Figma</h3>
+                                    <h3>TypeScript</h3>
                                     <p>Experienced</p>
                                 </div>
                             </div>  
@@ -238,6 +234,15 @@
                                 </div>
                             </div>  
                             <div class="skill-item ">
+                                <img src="./Images/flask_logo.png" alt="Flask_Logo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>Flask</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>  
+                            <div class="skill-item ">
                                 <img src="./Images/git_logo.png" alt="Git_Logo"
                                 class = "icon5"
                                 >
@@ -245,7 +250,7 @@
                                     <h3>Git/Version Control</h3>
                                     <p>Experienced</p>
                                 </div>
-                            </div>  `
+                            </div>  
 
                         </div>
     </section>
@@ -255,41 +260,68 @@
         <p class="section__text__p1"> Browse My Recent and Upcoming</p>
         <h1 class="title">Projects</h1>
         <div class="experience-details-container">
+        
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front">
+                            <div class="article container">
+                                <img src="./Images/musicicon.png" 
+                                alt="Project 2"
+                                class = "projects-img">
+                            </div>
+                        </div>
 
-                <div class="details-container color-container">
-                    <div class="article container">
-                        <img src="./Images/portfolioicon.png" alt="Project" class = "projects-img">
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this project, I created a Flask web 
+                                app that helps users generates custom mood + context 
+                                enhanced Spotify playlists using the Spotify Web API. 
+                                Users can search by genres and interact with a tinder-style UI for creating playlists.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>Python, Flask, HTML, CSS, JavaScript, Spotify Web API</p>
+                            <h4>Lesson Learned</h4>
+                            <p>Through this project, I learned the importance of handling third-party APIs carefully
+                                and designing clean endpoints to keep code maintainable. A soft skill I sharpened was effectively planning my work before jumping straight into coding.
+                        </div>
                     </div>
-                    <h2 class = "experience sub tite project-title"> Portfolio Completion</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" 
-                                onclick="location.href='https://github.com/tristanbeley92/Portfolio_Beley'">
-                            Github
-                        </button>
-                    </div>
-                </div>
-
-                <div class = "details-container color-container">
-                    <div class="article container">
-                        <img src="./Images/musicicon.png" 
-                        alt="Project 2"
-                        class = "projects-img">
-                    </div>
+                    
                     <h2 class = "experience sub tite project-title"> Adaptive Playlist Generator</h2>
                     <div class="btn-container">
                         <button class="btn btn-color-2 project-btn" 
                                 onclick="location.href='https://github.com/tristanbeley92/PlaylistGenerator.git'">
-                            Github
+                                Github
                         </button>
                     </div>
                 </div>
                 
-                <div class = "details-container color-container">
-                    <div class="article container">
-                        <img src="./Images/Unitygame.png" 
-                        alt="Project 2"
-                        class = "projects-img">
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front">
+                            <div class="article container">
+                                <img src="./Images/Unitygame.png" 
+                                alt="Project 2"
+                                class = "projects-img">
+                            </div>
+                        </div>
+                    
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this project, alongside a group of 4, I created a low-poly 3D RPG game built in Unity 
+                                featuring custom AI enemy behavior, difficult puzzles, and a unique multi-level progression system,
+                                capped off with an immersive boss fight.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>C#, Unity, Cinemachine, Blender assets</p>
+                            <h4>Lesson Learned</h4>
+                            <p>Through this project, I learned the importance breaking large features into smaller,
+                                testable systems and also how version control is critical for any collaborative development environment. 
+                                A soft skill I sharpened was effective team communication and time management.
+                            </p>
+                        </div>
                     </div>
+
                     <h2 class = "experience sub tite project-title"> C#/Unity Game Development</h2>
                     <div class="btn-container">
                         <button class="btn btn-color-2 project-btn" 
@@ -299,13 +331,88 @@
                     </div>
                 </div>
 
-                <div class = "details-container color-container">
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front">
+                            <div class="article container">
+                                <img src="./Images/opencamlab.png" 
+                                alt="Project 2"
+                                class = "projects-img">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this project, I built a React/Typescript web app using face-apis.js to detect faces in real time.
+                                The app supports facial analysis directly in the browser, supporting bounding boxes for multiple faces, dynamic emotion tagging, and image upload.
+                                To simulate real cloud deployment, the project is currently deployed on AWS Amplify.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>React, TypeScript, Redux Toolkit, face-api.js, AWS Amplify, Vite</p>
+                            <h4>Lesson Learned</h4>
+                            <p>In building this, I learned to optimize performance for real-time applications as well
+                                as the value of state management libraries like Redux Toolkit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h1 class = "project-title"> Age, Gender, and Emotion Prediction Model</h1>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.
+                        href = 'https://github.com/tristanbeley92/open-cam-lab.git'"
+                        >
+                            Github
+                        </button>
+                         <button class="btn btn-color-3 project-btn" onclick="location.
+                        href = 'https://main.df4g3v16sxvtp.amplifyapp.com/'"
+                        >
+                            Web Link
+                        </button>
+                    </div>
+                </div>
+
+                <div class="details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front">
+                            <div class="article container">
+                                <img src="./Images/portfolioicon.png" alt="Project" class = "projects-img">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this personal portfolio project, I get to showcase my skills and projects in unique way.
+                                It allows potential employers to get to know me better and see my passion for software development. Fun fact,
+                                this portfolio was mt first project and built using only HTML, CSS, and JavaScript!
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>HTML, CSS, JavaScript</p>
+                            <h4>Lesson Learned</h4>
+                            <p>This project reinforced my love for ideation reminding me how rewarding it is to build
+                                something from scratch. By choosing to work without relying on AI tools,
+                                the process was slower, but a TRUE learning experience.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <h1 class = "experience sub tite project-title"> Portfolio Completion</h1>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/tristanbeley92/Portfolio_Beley'">
+                            Github
+                        </button>
+                    </div>
+                </div>
+                
+
+                <div class = "details-container-projects color-container">
                     <div class="article container">
                         <img src="./Images/stockimg.jpg" 
                         alt="Project 2"
                         class = "projects-img">
                     </div>
-                    <h2 class = "experience sub tite project-title"> Stock Advisor Tool</h2>
+                    <h2 class = "project-title"> Stock Advisor Tool</h2>
                     <div class="btn-container">
                         <button class="btn btn-color-2 project-btn" onclick="location.
                         href = '#'"
@@ -348,7 +455,7 @@
         <div class="nav-links-container"> 
             <ul class = "nav-links">
                 <li><a href="#about"> About</a> </li>
-                <li><a href="#skills"> Skills</a> </li>
+                <li><a href="#javascript:void(0)" onclick="scrollToSkills()"> Skills</a> </li>
                 <li><a href="#projects"> Projects</a> </li>
                 <li><a href="#contact"> Contact</a> </li>
             </ul>
