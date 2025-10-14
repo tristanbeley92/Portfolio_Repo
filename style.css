@@ -14,6 +14,20 @@
         transform: translateY(0);
     }
 }
+@keyframes float-2 {
+    0% {
+        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translateY(-16px);
+        transform: translate3d(10px, 10px, 0);
+    }
+    100% {
+        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
+    }
+}
 
 *{
     margin: 0;
@@ -61,7 +75,7 @@ nav,
     display: flex; /*makes nav horizontal*/
 }
 
-nav{
+.desktop-nav{
     justify-content: space-around;
     align-items: center;
     height: 13vh; /*take 13% of whole screen no matter screen*/
@@ -177,6 +191,7 @@ a:hover{
     margin-top: 30%;
     border-radius: 50%;
     animation: float 3s ease-in-out infinite;
+    box-shadow: 0 50px 40px rgba(0, 0, 0, 0.2);
 }
 
 section{
@@ -338,7 +353,8 @@ section{
     margin:auto 0;
     border-radius:50px;
     filter: grayscale(90%);
-
+    animation: float-2 3s ease-in-out infinite;
+    box-shadow: 0 50px 40px rgba(0, 0, 0, 0.2);
 }
 
 .section-container{
@@ -390,7 +406,7 @@ section{
     justify-items: center; 
     align-items: center; /* Center-align items vertically */
     margin: 2rem auto;
-    max-width: 1000px; 
+    max-width: 1200px; 
 }
 
 .skill-item {
@@ -458,10 +474,10 @@ section{
 .experience-details-container {
     display: grid;
     grid-template-columns: repeat(2, minmax(400px, 1fr)); /* Two columns with a minimum width of 400px */
-    gap: 2rem; 
+    gap: 4rem; 
     margin: 3rem auto;
     justify-items: stretch;
-    max-width: 1000px;
+    max-width: 1100px;
 }
 
 .details-container-projects{
@@ -575,4 +591,10 @@ footer{
 
 footer p{
     text-align: center;
+}
+.footer-nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 13vh; /*take 13% of whole screen no matter screen*/
+    background: linear-gradient(to top, rgb(165, 182, 219), white)
 }
