@@ -133,11 +133,11 @@ but insated the drop down menu*/
     max-width: 900px;
     grid-template-columns: repeat(2, minmax(400px, 1fr));
   }
-  .details-container { max-width: 480px; }
+  .details-container-projects { max-width: 480px; }
 }
 
 /* Mobile: collapse to 1 column and keep everything centered */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .experience-details-container {
     grid-template-columns: 1fr;      /* one card per row */
     max-width: 400px;
