@@ -18,7 +18,7 @@
 
         <div>
             <ul class = "nav-links">
-                <li><a href="#about"> About</a> </li>
+                <li><a href="javascript:void(0)" onclick="scrollToAbout()"> About</a> </li>
                 <li><a href="javascript:void(0)" onclick="scrollToSkills()"> Skills</a> </li> <!-- Added JS function to scroll smoothly to skills section, overide manual easier than changing just one -->
                 <li><a href="#projects"> Projects</a> </li>
                 <li><a href="#contact"> Contact</a> </li>
@@ -56,7 +56,7 @@
 
                 <div class="btn-container">
                         <button class = "btn btn-color-2" 
-                        onclick = "window.open('./Images/TristanBeley_Resume.pdf')"
+                        onclick = "window.open('./Images/TristanBeley_Resume_Meta (1).pdf')"
                         >Download Resume
                     </button>
 
@@ -98,27 +98,20 @@
                         <img src="./Images/expicon.png" alt="Experience icon"
                         class ="iconexp">
                         <h3>Experience</h3>
-                        <p2>Android Application Developer |Sept 2025 - Present| <br/> <br/>Assistant Project Manager | Apr 2024 - Aug 2025 |<br />Member Services Lead | Apr 2023 - Aug 2025 |</p2>
+                        <p2>CTO Chief Technology Officer - RoleColorFinder<br/>| Sept 2025 - Present |<br/><br/>Game Consultant - Layyal Tech<br/>| Oct 2025 - Present |<br/><br/>Assistant Project Manager<br/>| Apr 2024 - Aug 2025 |<br/><br/>Member Services Lead<br/>| Apr 2023 - Aug 2025 |</p2>
                     </div>
                     <div class ="details-container">
                         <img src="./Images/eduicon.png" alt="Education icon"
                         class ="iconedu">
                         <h3>Education</h3>
-                        <p2>Third year student studying<br />Software Engineering At The University of Western</p2>
-
+                        <p2>Third year student studying<br />Software Engineering At The University of Western<br/><br/>Western Developers Society<br/>| Frontend Team |<br/><br/>Western Investment Club (WIC)<br/>| Researcher |<br/><br/>HackWestern 12 Winner<br/>| 🏆 Sun Life Best Health Hack |<br/>| 🏆 Best Use of DigitalOcean AI |</p2>
                     </div>
                 </div>
                 <div class="text-container">
                     <h4>Let me introduce myself!</h4> 
                         <p>
                     My name is Tristan Beley, and I am a motivated Software Engineering student with a passion for learning and building 
-                    practical solutions through code. I’m currently working remotely as an Android Developer at RoleColorFinder, where I contribute 
-                    to building a Kotlin/Java mobile app, gaining hands-on experience in app development and deployment. I also bring experience from 
-                    project management and customer-facing roles, having worked as an Assistant Project Manager at a general contracting company and 
-                    as a Backshop Team Lead at a private country club. These roles sharpened my communication, leadership, and adaptability, skills 
-                    I now apply both in my coursework and personal software projects. As a lifelong competitive hockey player, I’ve developed discipline
-                     and resilience that I bring to debugging tough problems and writing clean, scalable code. I’m excited to continue growing in development-driven 
-                     environments where I can combine my technical background, creativity, and problem-solving mindset to tackle real-world challenges. </p>  
+                    practical solutions through code. I currently serve as the Chief Technology Officer at RoleColorFinder, where I lead technical strategy and mobile app development using Kotlin and Java. Additionally, I work as a Game Consultant at Layyal Tech, applying my technical insights to gaming projects. My background includes experience in project management and customer-facing roles, which have sharpened my communication, leadership, and adaptability—skills I now apply to my technical leadership. As a lifelong competitive hockey player, I’ve developed discipline and resilience that I bring to debugging tough problems and writing clean, scalable code. I’m excited to continue growing in development-driven environments where I can combine my technical background, creativity, and problem-solving mindset to tackle real-world challenges. </p>  
                 </div>
             </div>
         </div>
@@ -263,6 +256,41 @@
         
                 <div class = "details-container-projects color-container">
                     <div class = "card-inner ">
+                        <div class="article-front" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="article container">
+                                <img src="/Images/NutriScan_Img.png" 
+                                alt="NutriScan AI"
+                                class = "projects-img" style="object-fit: contain;">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this award-winning hackathon project (HackWestern 12), I co-developed a web app that uses Gemini's multimodal AI to analyze physical health cues from user photos. It detects potential nutritional imbalances and instantly generates personalized, budget-friendly meal plans to help students improve their well-being.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>React, TypeScript, Tailwind CSS, Google Gemini 2.5 Flash, DigitalOcean Gradient AI</p>
+                            <h4>Lesson Learned</h4>
+                            <p>Building this in 36 hours sharpened my ability to rapidly integrate complex AI models into user-friendly interfaces. I learned how to effectively bridge the gap between raw visual data and actionable health insights, while collaborating intensely to deliver a winning product under pressure.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <h2 class = "experience sub tite project-title"> NutriScan AI</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/ZElnagar/HackWestern12?tab=readme-ov-file'">
+                                Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://nutriscans.tech/'">
+                                Web Link
+                        </button>
+                    </div>
+                </div>
+
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
                         <div class="article-front">
                             <div class="article container">
                                 <img src="./Images/musicicon.png" 
@@ -327,6 +355,10 @@
                         <button class="btn btn-color-2 project-btn" 
                                 onclick="location.href = 'https://github.com/AlexandraLHeureuxECE/final-project-thefellowship.git'">
                             Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='/Images/EscapePolyLand_DemoVideo.mkv'">
+                                Video Demo
                         </button>
                     </div>
                 </div>
@@ -454,7 +486,7 @@
     <nav class="footer-nav">
         <div class="nav-links-container-footer"> 
             <ul class = "nav-links">
-                <li><a href="#about"> About</a> </li>
+                <li><a href="javascript:void(0)" onclick="scrollToAbout()"> About</a> </li>
                 <li><a href="#javascript:void(0)" onclick="scrollToSkills()"> Skills</a> </li>
                 <li><a href="#projects"> Projects</a> </li>
                 <li><a href="#contact"> Contact</a> </li>

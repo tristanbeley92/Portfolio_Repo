@@ -12,5 +12,12 @@ function scrollToSkills() {
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
+  function scrollToAbout() {
+    const aboutSection = document.getElementById('about');
+    const offset = -100; // adjusted for proper scrolling to the about section 
+    const y = aboutSection.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
 
 

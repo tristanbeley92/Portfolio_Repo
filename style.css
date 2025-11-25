@@ -36,7 +36,9 @@
 
 body{
     font-family: 'Poppins', sans-serif; /* For font Selection, ^ implementation above*/
-    
+    background-color: #fffdf9; /* Very light cream */
+    background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1.5px, transparent 1px); /* Subtle dot texture */
+    background-size: 25px 25px;
 }
 
 html{
@@ -384,12 +386,19 @@ section{
     display: flex;
 }
 
+.text-container {
+    text-align: justify;
+    margin-top: 0;
+    padding: 0;
+}
 
 /*Skills*/
 .details-container{
     padding: 1.5rem;
     flex: 1;
-    background: white;
+    background-color: #fffdf9;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 25px 25px;
     border-radius: 2rem;
     border: 0.1rem solid rgb(53, 53, 53);
     border-color: rgb(163, 163, 163) ;
@@ -494,7 +503,6 @@ section{
     border: 0.1rem solid rgb(53, 53, 53);
     border-color: rgb(163, 163, 163) ;
     text-align: center;
-    overflow: hidden;
     perspective: 2000px;
 }
 
@@ -502,7 +510,9 @@ section{
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-.card-inner:hover{
+
+/* Changed trigger to parent hover for stability */
+.details-container-projects:hover .card-inner{
     transform: rotateY(180deg);
 }
 
@@ -520,11 +530,11 @@ section{
     inset: 0;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    border-radius: 2rem; /* Added to match container */
 }
 .article-back{
     transform: rotateY(180deg);
     background-color: rgba(214, 227, 236, 0.796);
-    border-radius: 5%;
     border-color: rgb(255, 22, 115);
     padding: 1rem;
     overflow: auto;
@@ -538,6 +548,7 @@ section{
     height: 400px; 
     object-fit: cover; 
     display: block;
+    border-radius: 2rem; /* Added to match container */
 }
 
 .project-title {
