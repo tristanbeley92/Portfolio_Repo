@@ -110,8 +110,7 @@
                 <div class="text-container">
                     <h4>Let me introduce myself!</h4> 
                         <p>
-                    My name is Tristan Beley, and I am a motivated Software Engineering student with a passion for learning and building 
-                    practical solutions through code. I currently serve as the Chief Technology Officer at RoleColorFinder, where I lead technical strategy and mobile app development using Kotlin and Java. Additionally, I work as a Game Consultant at Layyal Tech, applying my technical insights to gaming projects. My background includes experience in project management and customer-facing roles, which have sharpened my communication, leadership, and adaptability—skills I now apply to my technical leadership. As a lifelong competitive hockey player, I’ve developed discipline and resilience that I bring to debugging tough problems and writing clean, scalable code. I’m excited to continue growing in development-driven environments where I can combine my technical background, creativity, and problem-solving mindset to tackle real-world challenges. </p>  
+                    My name is Tristan Beley, and I am a motivated Software Engineering student with a passion for learning and building practical solutions through code. I currently serve as the Chief Technology Officer at RoleColorFinder, where I lead technical strategy and hands-on development across the platform, shaping core product systems and infrastructure as the company scales. Additionally, I work as a Game Consultant at Layyal Tech, applying my technical insights to gaming projects. My background includes experience in project management and customer-facing roles, which have sharpened my communication, leadership, and adaptability, skills I now apply to technical leadership and execution. As a lifelong competitive hockey player, I’ve developed discipline and resilience that I bring to debugging tough problems and writing clean, scalable code. I’m excited to continue growing in development-driven environments where I can combine my technical background, creativity, and problem-solving mindset to tackle real-world challenges. </p>  
                 </div>
             </div>
         </div>
@@ -254,6 +253,37 @@
         <h1 class="title">Projects</h1>
         <div class="experience-details-container">
         
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="article container">
+                                <img src="./Images/tedx_logo.jpg" 
+                                alt="TEDx ThirdWard Developer"
+                                class = "projects-img" style="object-fit: contain;">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this project, I developed a comprehensive web platform for TEDxThirdWard, a local TEDx organization. The application serves two main purposes: a public-facing portal for community engagement (showcasing speakers, events, and blog posts) and a secure, custom-built Admin Console for content management. I implemented a robust backend system using serverless functions to handle authentication, database interactions, and dynamic content updates, allowing non-technical team members to manage the site effortlessly.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p style="font-size: 0.9em;">Frontend: React, TypeScript, Vite, Tailwind CSS, Lucide React<br> Backend: Node.js (Serverless Functions), PostgreSQL<br> Authentication: JWT, Bcrypt<br> Deployment: Vercel</p>
+                            <h4>Lesson Learned</h4>
+                            <p style="font-size: 0.85em;">Through this project, I deepened my understanding of full-stack security implementation, specifically moving from basic authentication to a secure, hashed password system with forced password rotation for new users. I also honed my skills in building intuitive admin interfaces ("CMS" style) that bridge complex database relationships with user-friendly React components. A key soft skill I developed was translating stakeholder needs, like volunteer management and secretive admin access into concrete technical features.
+                            </p>
+                            <p style="font-size: 0.75em; margin-top: 5px;"><i>Note: I cannot publicly share the GitHub repository as it is the proprietary property of TEDxThirdWard, but feel free to reach out to me to learn more and I'd be happy to go over it!*</i></p>
+                        </div>
+                    </div>
+                    
+                    <h2 class = "experience sub tite project-title"> TEDx ThirdWard Developer</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://www.tedxthirdward.com/'" target="_blank">
+                                Website Link
+                        </button>
+                    </div>
+                </div>
                 <div class = "details-container-projects color-container">
                     <div class = "card-inner ">
                         <div class="article-front" style="display: flex; justify-content: center; align-items: center;">
@@ -438,22 +468,22 @@
                 </div>
                 
 
-                <div class = "details-container-projects color-container">
-                    <div class="article container">
-                        <img src="./Images/stockimg.jpg" 
-                        alt="Project 2"
-                        class = "projects-img">
-                    </div>
-                    <h2 class = "project-title"> Stock Advisor Tool</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.
-                        href = '#'"
-                        >
-                            In Progress
-                        </button>
-                    </div>
-                </div>
 
+        </div>
+    </section>
+
+    <!-- Game Pit Stop Section -->
+    <section id="game-pit-stop">
+        <p class="section__text__p1">Take a Break</p>
+        <h1 class="title">Game Pit Stop</h1>
+        <div class="game-container">
+            <div class="score-board">Score: <span id="score">0</span></div>
+            <canvas id="snakeGame" width="400" height="400"></canvas>
+            <div class="game-controls">
+                <button class="btn btn-color-1" onclick="startGame()">Start Game</button>
+                <button class="btn btn-color-2" onclick="resetGame()">Reset</button>
+            </div>
+            <p class="game-instructions">Use <strong>Arrow Keys</strong> to move!</p>
         </div>
     </section>
 
@@ -496,6 +526,17 @@
     </nav>
     
 </footer>
+
+    <!-- Game Modal -->
+    <div id="game-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Game Over!</h2>
+            <p>You Lost.</p>
+            <p>Your Score: <span id="final-score">0</span></p>
+            <button class="btn btn-color-1" onclick="restartGameFromModal()">Play Again</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
