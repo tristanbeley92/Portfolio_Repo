@@ -248,5 +248,35 @@ if (canvas) {
     resetGame();
 }
 
+// Project Section Animations
+function initProjectAnimations() {
+    const cards = document.querySelectorAll('.details-container-projects');
+    
+    if (cards.length === 0) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate-in');
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    cards.forEach(card => observer.observe(card));
+}
+
+// Initialize project animations when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProjectAnimations);
+} else {
+    initProjectAnimations();
+}
+
 
 

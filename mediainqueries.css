@@ -141,6 +141,45 @@ but insated the drop down menu*/
   .experience-details-container {
     grid-template-columns: 1fr;      /* one card per row */
     max-width: 400px;
+    gap: 2.5rem; /* Slightly reduced gap for mobile */
   }
   .details-container { max-width: 400px; }
+  
+  /* Optimize animations for mobile */
+  .details-container-projects {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .details-container-projects:hover {
+    transform: scale(1.02) translateY(-2px); /* Reduced scale for mobile */
+  }
+  
+  .card-inner {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Slightly faster on mobile */
+  }
+  
+  /* Ensure buttons are touch-friendly */
+  .btn {
+    min-height: 44px; /* Minimum touch target size */
+    padding: 0.875rem 1rem;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 600px) {
+  .experience-details-container {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .details-container-projects {
+    padding: 1.25rem;
+  }
+  
+  .project-btn {
+    width: 100%;
+    max-width: 200px;
+  }
 }

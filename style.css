@@ -29,6 +29,17 @@
     }
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 *{
     margin: 0;
     padding: 0; /* for etire site*/
@@ -46,7 +57,7 @@ html{
 }
 
 p{
-    color: rgb(85,85,85) 
+    color: rgb(85,85,85);
 }
 
 
@@ -298,10 +309,11 @@ section{
 
 .btn{
     font-weight: 600;
-    transition: all 300ms ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
+    will-change: transform, background-color, border-color;
 }
 
 .btn-color-1, .btn-color-2, .btn-color-3{
@@ -321,6 +333,8 @@ section{
 .btn-color-1:hover{
     background-color: rgb(203, 199, 237);
     color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-color-2, .btn-color-3{
@@ -329,10 +343,14 @@ section{
 
 .btn-color-2:hover{
     border: rgb(255, 255, 255) 0.1rem solid;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .btn-color-3:hover{
     background: rgb(29, 53, 110);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -473,6 +491,12 @@ section{
 
 .project-btn{
     border-color:rgb(163,163,163);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .project-btn-web{
     color:rgb(253, 35, 35);
@@ -504,11 +528,21 @@ section{
     border-color: rgb(163, 163, 163) ;
     text-align: center;
     perspective: 2000px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    will-change: transform;
+}
+
+.details-container-projects.animate-in {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .details-container-projects:hover{
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05) translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Changed trigger to parent hover for stability */
@@ -521,8 +555,9 @@ section{
     width: 100%;
     height: 420px;
     text-align: center;
-    transition: transform 0.7s ease-in-out;
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .article-front, .article-back{
@@ -534,7 +569,7 @@ section{
 }
 .article-back{
     transform: rotateY(180deg);
-    background-color: rgba(214, 227, 236, 0.796);
+    background-color: rgba(238, 237, 235, 0.796);
     border-color: rgb(255, 22, 115);
     padding: 1rem;
     overflow: auto;
