@@ -5,6 +5,16 @@ function toggleMenu(){
     i.classList.toggle("open");
 }
 
+function mobileControl(direction) {
+    if (!isGameRunning) return;
+    switch(direction) {
+        case 'up':    if (dy !== 1)  { dx = 0; dy = -1; } break;
+        case 'down':  if (dy !== -1) { dx = 0; dy =  1; } break;
+        case 'left':  if (dx !== 1)  { dx = -1; dy = 0; } break;
+        case 'right': if (dx !== -1) { dx =  1; dy = 0; } break;
+    }
+}
+
 function scrollToSkills() {
     const skillsSection = document.getElementById('skills');
     const offset = -110; // adjusted for proper scrolling to the skills section 

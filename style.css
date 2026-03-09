@@ -50,10 +50,12 @@ body{
     background-color: #fffdf9; /* Very light cream */
     background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1.5px, transparent 1px); /* Subtle dot texture */
     background-size: 25px 25px;
+    overflow-x: hidden;
 }
 
 html{
     scroll-behavior: smooth; /* scrolls down smoothly to each section*/
+    overflow-x: hidden;
 }
 
 p{
@@ -124,10 +126,15 @@ a:hover{
 
 #fall-nav{
     display: none;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;;
-    gap: 10rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(to bottom, rgb(165, 182, 219), white);
 }
 
 .fall-menu{
@@ -152,23 +159,35 @@ a:hover{
 }
 
 .menu-links{
-    position: absolute;
-    top: 100%;
-    right: 0%;
-    width: fit-content;
+    position: fixed;
+    top: 63px;
+    left: 0;
+    right: 0;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3 ease-in-out;
+    transition: max-height 0.35s ease-in-out, box-shadow 0.3s ease;
+    background: linear-gradient(to bottom, white, rgb(218, 226, 242));
+    border-radius: 0 0 1.5rem 1.5rem;
+    z-index: 998;
+    box-shadow: none;
 }
 
 .menu-links a{
     display: block;
-    padding: 13px;
+    padding: 1.1rem 1.5rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
     color: black;
     text-decoration: none;
-    transition: all 0.3 ease-in-out;
+    transition: background 0.2s ease, color 0.2s ease;
+    border-bottom: 1px solid rgba(165, 182, 219, 0.35);
+}
+
+.menu-links a:hover{
+    background: rgba(165, 182, 219, 0.45);
+    color: #111;
+    text-decoration: none;
 }
 
 .menu-links li{
@@ -177,6 +196,7 @@ a:hover{
 
 .menu-links.open{
     max-height: 300px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .fall-icon.open span:first-child{
@@ -691,6 +711,57 @@ footer p{
     margin-top: 1rem;
     font-size: 0.9rem;
     color: #666;
+}
+
+/* Mobile D-Pad Controls */
+.mobile-game-controls {
+    display: none;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.mobile-dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.dpad-middle-row {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.dpad-btn {
+    width: 64px;
+    height: 64px;
+    font-size: 1.4rem;
+    border: 2px solid #444;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: background 0.12s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dpad-btn:active {
+    background: rgba(165, 182, 219, 0.8);
+    transform: scale(0.9);
+}
+
+.dpad-center {
+    background: rgba(200, 200, 200, 0.4);
+    border-color: #ccc;
+    cursor: default;
+    pointer-events: none;
+    box-shadow: none;
 }
 
 /* Modal Styling */

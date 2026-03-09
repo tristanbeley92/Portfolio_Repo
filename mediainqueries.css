@@ -13,6 +13,12 @@
 
 
 @media screen and (max-width: 1200px){
+    body {
+        padding-top: 63px;
+    }
+    .home {
+        display: none;
+    }
     #profile{
         display: flex;
         flex-direction: column;
@@ -38,6 +44,9 @@
     section{
         margin: 0 5%;
     }
+    #about {
+        margin-top: 4rem;
+    }
     .section_pic-container{
         width: 275px;
         height: 275px;
@@ -59,12 +68,17 @@
 }
 
 @media screen and (max-width: 600px){
-    #contact, footer{
-        height: 10vh;
+    #contact {
+        height: auto;
+        min-height: fit-content;
+        padding-bottom: 2rem;
+    }
+    footer{
+        height: auto;
     }
     #profile{
-        height: 50vh;
-        margin-bottom: 0;
+        height: auto;
+        margin-bottom: 2rem;
     }
     footer nav{
         height: fit-content;
@@ -130,22 +144,12 @@ but insated the drop down menu*/
 
 @media (max-width: 1000px) {
   .experience-details-container {
-    max-width: 900px;
-    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    gap: 2.5rem;
   }
-  .details-container-projects { max-width: 480px; }
-}
-
-/* Mobile: collapse to 1 column and keep everything centered */
-@media (max-width: 1000px) {
-  .experience-details-container {
-    grid-template-columns: 1fr;      /* one card per row */
-    max-width: 400px;
-    gap: 2.5rem; /* Slightly reduced gap for mobile */
-  }
-  .details-container { max-width: 400px; }
+  .details-container { max-width: 520px; }
   
-  /* Optimize animations for mobile */
   .details-container-projects {
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
                 box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
@@ -153,16 +157,15 @@ but insated the drop down menu*/
   }
   
   .details-container-projects:hover {
-    transform: scale(1.02) translateY(-2px); /* Reduced scale for mobile */
+    transform: scale(1.02) translateY(-2px);
   }
   
   .card-inner {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Slightly faster on mobile */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  /* Ensure buttons are touch-friendly */
   .btn {
-    min-height: 44px; /* Minimum touch target size */
+    min-height: 44px;
     padding: 0.875rem 1rem;
   }
 }
@@ -172,6 +175,7 @@ but insated the drop down menu*/
   .experience-details-container {
     gap: 2rem;
     padding: 0 1rem;
+    max-width: 100%;
   }
   
   .details-container-projects {
@@ -181,5 +185,19 @@ but insated the drop down menu*/
   .project-btn {
     width: 100%;
     max-width: 200px;
+  }
+}
+
+/* Mobile canvas scaling and game controls */
+@media (max-width: 768px) {
+  .mobile-game-controls {
+    display: flex;
+  }
+  #snakeGame {
+    width: 320px !important;
+    height: 320px !important;
+  }
+  .game-instructions {
+    display: none;
   }
 }
