@@ -249,8 +249,49 @@ function handleInput(e) {
     }
 }
 
+function initSkillsFadeIn() {
+    const skillsSection = document.getElementById('skills');
+    const skillItems = document.querySelectorAll('.skill-item, .skill-item2');
+
+    if (!skillsSection || skillItems.length === 0) return;
+
+    document.body.classList.add('skills-reveal-ready');
+
+    // Fallback for browsers that don't support IntersectionObserver.
+    if (!('IntersectionObserver' in window)) {
+        skillItems.forEach(item => item.classList.add('skill-visible'));
+        return;
+    }
+
+    let hasAnimated = false;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting || hasAnimated) return;
+
+            hasAnimated = true;
+            skillItems.forEach((item, index) => {
+                item.style.transitionDelay = `${index * 70}ms`;
+                item.classList.add('skill-visible');
+
+                // Clear delay after reveal so hover responds immediately.
+                setTimeout(() => {
+                    item.style.transitionDelay = '0ms';
+                }, index * 70 + 700);
+            });
+
+            observer.disconnect();
+        });
+    }, {
+        root: null,
+        threshold: 0.25
+    });
+
+    observer.observe(skillsSection);
+}
+
 // Event Listeners
 document.addEventListener('keydown', handleInput);
+initSkillsFadeIn();
 
 // Initial draw logic 
 // Wait for DOM content to be loaded if script is in head, but it is at end of body so it's fine.
