@@ -24,8 +24,15 @@ function scrollToSkills() {
 
   function scrollToAbout() {
     const aboutSection = document.getElementById('about');
-    const offset = -100; // adjusted for proper scrolling to the about section 
+    const offset = -100; // adjusted for proper scrolling to the about section
     const y = aboutSection.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  function scrollToExperience() {
+    const experienceSection = document.getElementById('experience');
+    const offset = -100; // adjusted for proper scrolling to the experience section
+    const y = experienceSection.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
@@ -327,6 +334,35 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initProjectAnimations);
 } else {
     initProjectAnimations();
+}
+
+// Experience Section Animations
+function initExperienceAnimations() {
+    const cards = document.querySelectorAll('.featured-exp-card');
+
+    if (cards.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate-in');
+                }, index * 120);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    cards.forEach(card => observer.observe(card));
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initExperienceAnimations);
+} else {
+    initExperienceAnimations();
 }
 
 
