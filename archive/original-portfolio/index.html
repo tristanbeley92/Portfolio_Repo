@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tristans Portfolio</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="mediainqueries.css"/>
+</head>
+<body>
+    <!-- /*Nav html*/ -->
+    <nav class= "desktop-nav" id="desktop-nav">
+        <div class="name">Welcome!</div>
+        <div class = "home">
+            <img src="./Images/home.png" alt="Home Photo"
+            onclick="location.href='/#desktop-nav'">
+        </div>
+
+        <div>
+            <ul class = "nav-links">
+                <li><a href="javascript:void(0)" onclick="scrollToAbout()"> About</a> </li>
+                <li><a href="javascript:void(0)" onclick="scrollToExperience()"> Experience</a> </li>
+                <li><a href="javascript:void(0)" onclick="scrollToSkills()"> Skills</a> </li> <!-- Added JS function to scroll smoothly to skills section, overide manual easier than changing just one -->
+                <li><a href="#projects"> Projects</a> </li>
+                <li><a href="#contact"> Contact</a> </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Fall navigation for smaller screens -->
+    <nav id="fall-nav"> 
+        <div class="name">Welcome!</div>
+        <div class="fall-menu">
+            <div class = "fall-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()"> About</a> </li>
+                <li><a href="#experience" onclick="toggleMenu()"> Experience</a> </li>
+                <li><a href="#skills" onclick="toggleMenu()"> Skills</a> </li>
+                <li><a href="#projects" onclick="toggleMenu()"> Projects</a> </li>
+                <li><a href="#contact"onclick="toggleMenu()"> Contact</a> </li>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Profile Section -->
+    <section id="profile">
+            <div class="section_pic-container">
+                <img src="./Images/Profile_pic_2.png" alt="Tristan Beley Profile Pic ">
+            </div>
+
+            <div class ="section__text">
+                <p class="section__text__p1">Hello, I am</p>
+                <h1 class = "title"> Tristan Beley</h1>
+                <p class = "section__text__p2">Software Engineering Student</p>
+
+                <div class="btn-container">
+                        <button class = "btn btn-color-2" 
+                        onclick = "window.open('./Images/TristanBeley_Resume_Current.pdf')"
+                        >Download Resume
+                    </button>
+
+                    <button class = "btn btn-color-1" 
+                        onclick = "location.href='./#contact'"> 
+                        Contact Info
+                    </button>
+                    </div>
+                    <div id="socials-container">
+                        <img src="./Images/LIlogo.png" 
+                        alt="Personal GitHub profile"
+                        class = "icon1" 
+                        onclick = "location.href='https://www.linkedin.com/in/tristan-beley-112652293/'"
+                        />
+
+                        <img src="./Images/githublogo.png" 
+                        alt="Personal LinkeIN profile"
+                        class = "icon2" 
+                        onclick = "location.href='https://github.com/tristanbeley92'"
+                        />
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">   
+        <p class ="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class = "section_pic-container2">
+                    <img src="./Images/Imagehockey.png" alt="Experience Photo"
+                    class = "about-pic">
+            </div>
+
+            <div class ="about-details-container">
+                <div class = "about-containers">
+                    <div class = "details-container">
+                        <img src="./Images/eduicon.png" alt="Education icon"
+                        class ="iconedu">
+                        <h3>Education</h3>
+                        <p2>Third year student studying<br />Software Engineering At The University of Western<br/><br/>Western Developers Society<br/>| Frontend Team |<br/><br/>Western Investment Club (WIC)<br/>| Researcher |</p2>
+                    </div>
+                    <div class ="details-container">
+                        <span class="about-icon-emoji">🏆</span>
+                        <h3>Awards</h3>
+                        <p2>HackWestern 12 Winner<br/>| 🏆 Sun Life Best Health Hack |<br/>| 🏆 Best Use of DigitalOcean AI |</p2>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h4>Let me introduce myself!</h4> 
+                    <!-- Hidden for now: My name is Tristan Beley, and I am a motivated Software Engineering student with a passion for learning and building practical solutions through code. I am a Cloud/Software Engineer Intern at ConvergentIS, where I work across production infrastructure, distributed systems, and enterprise deployments — and I'm also a Co-Founder and CTO at RoleColorFinder, where I shape strategic direction and contribute to the platform's positioning as the company scales. My background includes experience in project management and customer-facing roles, which have sharpened my communication, leadership, and adaptability, skills I now apply to technical leadership and execution. As a lifelong competitive hockey player, I’ve developed discipline and resilience that I bring to debugging tough problems and writing clean, scalable code. I’m excited to continue growing in development-driven environments where I can combine my technical background, creativity, and problem-solving mindset to tackle real-world challenges. -->
+                        <p>
+                    My name is Tristan Beley, and I am a motivated Software Engineering student with a passion for learning and building practical solutions through code. I'm also a Co-Founder and CTO at RoleColorFinder, where I shape strategic direction and contribute to the platform's positioning as the company scales. My background includes experience in project management and customer-facing roles, which have sharpened my communication, leadership, and adaptability, skills I now apply to technical leadership and execution. As a lifelong competitive hockey player, I’ve developed discipline and resilience that I bring to debugging tough problems and writing clean, scalable code. I’m excited to continue growing in development-driven environments where I can combine my technical background, creativity, and problem-solving mindset to tackle real-world challenges. </p>
+                </div>
+            </div>
+        </div>
+        <img src="./Images/arrowicon.png" alt="Arrow" class="icon arrow"
+        onclick="scrollToExperience()"
+        />
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <p class="section__text__p1">Where I've Been Working</p>
+        <h1 class="title">Experience</h1>
+
+        <div class="exp-list">
+            <div class="featured-exp-card" hidden aria-hidden="true">
+                <span class="exp-badge">Featured &middot; Production Engineering</span>
+                <div class="exp-header">
+                    <div>
+                        <h3>Cloud &amp; Software Engineer Intern</h3>
+                        <span class="exp-company">ConvergentIS</span>
+                    </div>
+                    <span class="exp-dates">Summer 2026 &ndash; Present</span>
+                </div>
+
+                <p class="exp-summary">Cloud and software engineering across production infrastructure, distributed systems, and enterprise deployments. I work with AWS, Kubernetes, CI/CD, Temporal, and SAP systems, with a focus on reliability, debugging, and owning releases from testing through production.</p>
+
+                <div class="exp-callout">Started as an intern &mdash; within months I was carrying release ownership closer to what a senior engineer would hold, after one left the team.</div>
+
+                <ul class="exp-bullets">
+                    <li>Took ownership of much of the production release lifecycle &mdash; testing, cross-environment migrations, deployments, monitoring, and incident resolution.</li>
+                    <li>Worked heavily with AWS EKS, Kubernetes, Azure DevOps, ArgoCD, Temporal, TypeScript, and SAP IAS across day-to-day engineering.</li>
+                    <li>Helped promote a sandbox AWS EKS environment into pre-production and supported CI/CD across 10+ Kubernetes microservices.</li>
+                    <li>Identified and resolved 15+ reliability and security gaps across the platform.</li>
+                    <li>Diagnosed recurring Temporal worker outages traced to database credential rotation, and helped ship a resilient recovery fix.</li>
+                    <li>Work directly with production systems, where reliability, debugging, and safe deployments are non-negotiable.</li>
+                </ul>
+
+                <div class="exp-tags">
+                    <span class="exp-tag">AWS</span>
+                    <span class="exp-tag">Kubernetes</span>
+                    <span class="exp-tag">EKS</span>
+                    <span class="exp-tag">Temporal</span>
+                    <span class="exp-tag">TypeScript</span>
+                    <span class="exp-tag">Azure DevOps</span>
+                    <span class="exp-tag">ArgoCD</span>
+                    <span class="exp-tag">SAP IAS</span>
+                    <span class="exp-tag">CI/CD</span>
+                    <span class="exp-tag">Distributed Systems</span>
+                </div>
+            </div>
+
+            <div class="featured-exp-card">
+                <span class="exp-badge">Co-Founder &middot; Startup</span>
+                <div class="exp-header">
+                    <div>
+                        <h3>Co-Founder + CTO</h3>
+                        <span class="exp-company">RoleColorFinder</span>
+                    </div>
+                    <span class="exp-dates">Sept 2025 &ndash; Present</span>
+                </div>
+
+                <p class="exp-summary">Co-founded and lead technical direction for a color-matching platform, from architecture decisions to product positioning as the company scales.</p>
+
+                <ul class="exp-bullets">
+                    <li>Own technical strategy and architecture decisions as the platform scales from early product to broader release.</li>
+                    <li>Work directly with early users and stakeholders to shape product direction and prioritize engineering work.</li>
+                    <li>Balance hands-on development with the operational and strategic responsibilities of a technical co-founder.</li>
+                </ul>
+
+                <div class="exp-tags">
+                    <span class="exp-tag">Product Strategy</span>
+                    <span class="exp-tag">Architecture</span>
+                    <span class="exp-tag">Startups</span>
+                    <span class="exp-tag">Leadership</span>
+                </div>
+            </div>
+
+            <div class="featured-exp-card">
+                <span class="exp-badge">Consulting</span>
+                <div class="exp-header">
+                    <div>
+                        <h3>Game Consultant</h3>
+                        <span class="exp-company">Layyal Tech</span>
+                    </div>
+                    <span class="exp-dates">Oct 2025 &ndash; Jan 2026</span>
+                </div>
+
+                <p class="exp-summary">Advised on game design and technical implementation for an independent studio project.</p>
+
+                <ul class="exp-bullets">
+                    <li>Advised on game design decisions and technical feasibility throughout development.</li>
+                    <li>Provided feedback on implementation approach and technical tradeoffs to the development team.</li>
+                </ul>
+
+                <div class="exp-tags">
+                    <span class="exp-tag">Game Design</span>
+                    <span class="exp-tag">Technical Consulting</span>
+                </div>
+            </div>
+
+            <div class="featured-exp-card">
+                <span class="exp-badge">Project Management</span>
+                <div class="exp-header">
+                    <div>
+                        <h3>Assistant Project Manager</h3>
+                        <span class="exp-company">Konstruct21</span>
+                    </div>
+                    <span class="exp-dates">Apr 2024 &ndash; Aug 2025</span>
+                </div>
+
+                <p class="exp-summary">Managed project timelines, budgets, and stakeholder communication in the construction industry.</p>
+
+                <ul class="exp-bullets">
+                    <li>Managed project timelines, budgets, and stakeholder communication across active construction projects.</li>
+                    <li>Coordinated across teams and vendors to keep projects on schedule and within scope.</li>
+                    <li>Built planning and execution discipline now applied directly to engineering release work.</li>
+                </ul>
+
+                <div class="exp-tags">
+                    <span class="exp-tag">Project Management</span>
+                    <span class="exp-tag">Planning</span>
+                    <span class="exp-tag">Stakeholder Communication</span>
+                </div>
+            </div>
+        </div>
+
+        <img src="./Images/arrowicon.png" alt="Arrow" class="icon arrow"
+        onclick="scrollToSkills()"
+        />
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <p class= section__text__p1>Explore My</p>
+        <h1 class="title">Skills</h1>
+                        <p class="skills-subheading">Languages &amp; Frameworks</p>
+                        <div class ="skills-grid">
+
+
+                            <div class="skill-item ">
+                                <img src="./Images/pythonlogo.png" alt="pylogo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>Python</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+
+                            <div class="skill-item ">
+                                <img src="./Images/sqllogo.png" alt="sqllogo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>SQL</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+
+
+                            <div class="skill-item ">
+                                <img src="./Images/Clogo.png" alt="clogo" class = "icon5">
+                                <div>
+                                    <h3>C</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </div>
+
+
+                            <div class="skill-item ">
+                                <img src="./Images/csharplogo.png" alt="c#logo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>C#</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+                            
+                             <div class="skill-item ">
+                                <img src="./Images/Java-Logo.png" alt="javalogo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>Java</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item ">
+                                <img src="./Images/jslogo.png" alt="jslogo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>JavaScript</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </div>
+
+                            <div class="skill-item ">
+                                <img src="./Images/htmllogo.png" alt="HTMLlogo"
+                                class = "icon4"
+                                >
+                                <div>
+                                    <h3>HTML</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+                           
+                            <div class="skill-item ">
+                                <img src="./Images/csslogo.png" alt="csslogo"
+                                class = "icon4"
+                                >
+                                <div>
+                                    <h3>CSS</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+                           
+                            <div class="skill-item ">
+                                <img src="./Images/typescript_logo.png" alt="typescript_logo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>TypeScript</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>  
+                            
+                            <div class="skill-item ">
+                                <img src="./Images/React_Logo.png" alt="React_Logo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>React</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </div>  
+                            <div class="skill-item ">
+                                <img src="./Images/flask_logo.png" alt="Flask_Logo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>Flask</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>  
+                            <div class="skill-item ">
+                                <img src="./Images/git_logo.png" alt="Git_Logo"
+                                class = "icon5"
+                                >
+                                <div>
+                                    <h3>Git/Version Control</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p class="skills-subheading">Cloud, DevOps &amp; Distributed Systems</p>
+                        <div class="skill-tag-grid">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">EKS</span>
+                            <span class="skill-tag">Azure DevOps</span>
+                            <span class="skill-tag">ArgoCD</span>
+                            <span class="skill-tag">Temporal</span>
+                            <span class="skill-tag">SAP IAS</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Distributed Systems</span>
+                        </div>
+    </section>
+
+    <!-- Projects sections -->
+    <section id="projects">
+        <p class="section__text__p1"> Browse My Recent and Upcoming</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+        
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="article container">
+                                <img src="./Images/tedx_logo.jpg" 
+                                alt="TEDx ThirdWard Developer"
+                                class = "projects-img project-rounded-media" style="object-fit: contain;">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this project, I developed a comprehensive web platform for TEDxThirdWard, a local TEDx organization. The application serves two main purposes: a public-facing portal for community engagement (showcasing speakers, events, and blog posts) and a secure, custom-built Admin Console for content management. I implemented a robust backend system using serverless functions to handle authentication, database interactions, and dynamic content updates, allowing non-technical team members to manage the site effortlessly.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p style="font-size: 0.9em;">Frontend: React, TypeScript, Vite, Tailwind CSS, Lucide React<br> Backend: Node.js (Serverless Functions), PostgreSQL<br> Authentication: JWT, Bcrypt<br> Deployment: Vercel</p>
+                            <h4>Lesson Learned</h4>
+                            <p style="font-size: 0.85em;">Through this project, I deepened my understanding of full-stack security implementation, specifically moving from basic authentication to a secure, hashed password system with forced password rotation for new users. I also honed my skills in building intuitive admin interfaces ("CMS" style) that bridge complex database relationships with user-friendly React components. A key soft skill I developed was translating stakeholder needs, like volunteer management and secretive admin access into concrete technical features.
+                            </p>
+                            <p style="font-size: 0.75em; margin-top: 5px;"><i>Note: I cannot publicly share the GitHub repository as it is the proprietary property of TEDxThirdWard, but feel free to reach out to me to learn more and I'd be happy to go over it!*</i></p>
+                        </div>
+                    </div>
+                    
+                    <h2 class = "experience sub tite project-title"> TEDx ThirdWard Developer</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://www.tedxthirdward.com/'" target="_blank">
+                                Website Link
+                        </button>
+                    </div>
+                </div>
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="article container">
+                                <img src="/Images/NutriScan_Img.png" 
+                                alt="NutriScan AI"
+                                class = "projects-img project-rounded-media" style="object-fit: contain;">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this award-winning hackathon project (HackWestern 12), I co-developed a web app that uses Gemini's multimodal AI to analyze physical health cues from user photos. It detects potential nutritional imbalances and instantly generates personalized, budget-friendly meal plans to help students improve their well-being.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>React, TypeScript, Tailwind CSS, Google Gemini 2.5 Flash, DigitalOcean Gradient AI</p>
+                            <h4>Lesson Learned</h4>
+                            <p>Building this in 36 hours sharpened my ability to rapidly integrate complex AI models into user-friendly interfaces. I learned how to effectively bridge the gap between raw visual data and actionable health insights, while collaborating intensely to deliver a winning product under pressure.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <h2 class = "experience sub tite project-title"> NutriScan AI</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/ZElnagar/HackWestern12?tab=readme-ov-file'">
+                                Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://zelnagar.github.io/HackWestern12/'">
+                                Web Link
+                        </button>
+                    </div>
+                </div>
+
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front">
+                            <div class="article container">
+                                <img src="./Images/musicicon.png" 
+                                alt="Project 2"
+                                class = "projects-img">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this project, I created a Flask web 
+                                app that helps users generates custom mood + context 
+                                enhanced Spotify playlists using the Spotify Web API. 
+                                Users can search by genres and interact with a tinder-style UI for creating playlists.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>Python, Flask, HTML, CSS, JavaScript, Spotify Web API</p>
+                            <h4>Lesson Learned</h4>
+                            <p>Through this project, I learned the importance of handling third-party APIs carefully
+                                and designing clean endpoints to keep code maintainable. A soft skill I sharpened was effectively planning my work before jumping straight into coding.
+                        </div>
+                    </div>
+                    
+                    <h2 class = "experience sub tite project-title"> Adaptive Playlist Generator</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/tristanbeley92/PlaylistGenerator.git'">
+                                Github
+                        </button>
+                    </div>
+                </div>
+                
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front">
+                            <div class="article container">
+                                <img src="./Images/Unitygame.png" 
+                                alt="Project 2"
+                                class = "projects-img">
+                            </div>
+                        </div>
+                    
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this project, alongside a group of 4, I created a low-poly 3D RPG game built in Unity 
+                                featuring custom AI enemy behavior, difficult puzzles, and a unique multi-level progression system,
+                                capped off with an immersive boss fight.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>C#, Unity, Cinemachine, Blender assets</p>
+                            <h4>Lesson Learned</h4>
+                            <p>Through this project, I learned the importance breaking large features into smaller,
+                                testable systems and also how version control is critical for any collaborative development environment. 
+                                A soft skill I sharpened was effective team communication and time management.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 class = "experience sub tite project-title"> C#/Unity Game Development</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href = 'https://github.com/AlexandraLHeureuxECE/final-project-thefellowship.git'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='/Images/EscapePolyLand_DemoVideo.mkv'">
+                                Video Demo
+                        </button>
+                    </div>
+                </div>
+
+                <div class = "details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front">
+                            <div class="article container">
+                                <img src="./Images/opencamlab.png" 
+                                alt="Project 2"
+                                class = "projects-img">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this project, I built a React/Typescript web app using face-apis.js to detect faces in real time.
+                                The app supports facial analysis directly in the browser, supporting bounding boxes for multiple faces, dynamic emotion tagging, and image upload.
+                                To simulate real cloud deployment, the project is currently deployed on AWS Amplify.
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>React, TypeScript, Redux Toolkit, face-api.js, AWS Amplify, Vite</p>
+                            <h4>Lesson Learned</h4>
+                            <p>In building this, I learned to optimize performance for real-time applications as well
+                                as the value of state management libraries like Redux Toolkit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h1 class = "project-title"> Age, Gender, and Emotion Prediction Model</h1>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.
+                        href = 'https://github.com/tristanbeley92/open-cam-lab.git'"
+                        >
+                            Github
+                        </button>
+                         <button class="btn btn-color-3 project-btn" onclick="location.
+                        href = 'https://main.df4g3v16sxvtp.amplifyapp.com/'"
+                        >
+                            Web Link
+                        </button>
+                    </div>
+                </div>
+
+                <div class="details-container-projects color-container">
+                    <div class = "card-inner ">
+                        <div class="article-front">
+                            <div class="article container">
+                                <img src="./Images/portfolioicon.png" alt="Project" class = "projects-img">
+                            </div>
+                        </div>
+
+                        <div class = "article-back">
+                            <h3>Project Overview</h3>
+                            <p>In this personal portfolio project, I get to showcase my skills and projects in unique way.
+                                It allows potential employers to get to know me better and see my passion for software development. Fun fact,
+                                this portfolio was mt first project and built using only HTML, CSS, and JavaScript!
+                            </p>
+                            <h4>Technologies Used</h4>
+                            <p>HTML, CSS, JavaScript</p>
+                            <h4>Lesson Learned</h4>
+                            <p>This project reinforced my love for ideation reminding me how rewarding it is to build
+                                something from scratch. By choosing to work without relying on AI tools,
+                                the process was slower, but a TRUE learning experience.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <h1 class = "experience sub tite project-title"> Portfolio Completion</h1>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/tristanbeley92/Portfolio_Beley'">
+                            Github
+                        </button>
+                    </div>
+                </div>
+                
+
+
+        </div>
+    </section>
+
+    <!-- Game Pit Stop Section -->
+    <section id="game-pit-stop">
+        <p class="section__text__p1">Take a Break</p>
+        <h1 class="title">Game Pit Stop</h1>
+        <div class="game-container">
+            <div class="score-board">Score: <span id="score">0</span></div>
+            <canvas id="snakeGame" width="400" height="400"></canvas>
+            <div class="game-controls">
+                <button class="btn btn-color-1" onclick="startGame()">Start Game</button>
+                <button class="btn btn-color-2" onclick="resetGame()">Reset</button>
+            </div>
+            <p class="game-instructions">Use <strong>Arrow Keys</strong> to move!</p>
+            <!-- Mobile D-pad -->
+            <div class="mobile-game-controls">
+                <div class="mobile-dpad">
+                    <button class="dpad-btn" onclick="mobileControl('up')">▲</button>
+                    <div class="dpad-middle-row">
+                        <button class="dpad-btn" onclick="mobileControl('left')">◀</button>
+                        <div class="dpad-btn dpad-center"></div>
+                        <button class="dpad-btn" onclick="mobileControl('right')">▶</button>
+                    </div>
+                    <button class="dpad-btn" onclick="mobileControl('down')">▼</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id = "contact">
+        <p class="section__text__p1">Get In Touch</p>
+        <h1 class ="title"> Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img 
+                src="Images/mailicon.png" 
+                alt="Mail icon"
+                class = "icon contact-icon"
+                />
+                <p><a href="mailto:tristanbeley@gmail.com">tristanbeley@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img 
+                src="Images/LIlogo.png" 
+                alt="LinkedIn icon"
+                class = "icon contact-icon-linked-icon"
+                />
+                <p><a href="https://www.linkedin.com/in/tristan-beley-112652293/">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer-nav">
+    <nav class="footer-nav">
+        <div class="nav-links-container-footer"> 
+            <ul class = "nav-links">
+                <li><a href="javascript:void(0)" onclick="scrollToAbout()"> About</a> </li>
+                <li><a href="javascript:void(0)" onclick="scrollToExperience()"> Experience</a> </li>
+                <li><a href="javascript:void(0)" onclick="scrollToSkills()"> Skills</a> </li>
+                <li><a href="#projects"> Projects</a> </li>
+                <li><a href="#contact"> Contact</a> </li>
+            </ul>
+        </div>
+        <p>Created by Tristan Beley &#169;</p>
+    </nav>
+    
+</footer>
+
+    <!-- Game Modal -->
+    <div id="game-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Game Over!</h2>
+            <p>You Lost.</p>
+            <p>Your Score: <span id="final-score">0</span></p>
+            <button class="btn btn-color-1" onclick="restartGameFromModal()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,369 +1,81 @@
-function toggleMenu(){
-    const m = document.querySelector(".menu-links");
-    const i = document.querySelector(".fall-icon");
-    m.classList.toggle("open");
-    i.classList.toggle("open");
-}
-
-function mobileControl(direction) {
-    if (!isGameRunning) return;
-    switch(direction) {
-        case 'up':    if (dy !== 1)  { dx = 0; dy = -1; } break;
-        case 'down':  if (dy !== -1) { dx = 0; dy =  1; } break;
-        case 'left':  if (dx !== 1)  { dx = -1; dy = 0; } break;
-        case 'right': if (dx !== -1) { dx =  1; dy = 0; } break;
-    }
-}
-
-function scrollToSkills() {
-    const skillsSection = document.getElementById('skills');
-    const offset = -110; // adjusted for proper scrolling to the skills section 
-    const y = skillsSection.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-
-  function scrollToAbout() {
-    const aboutSection = document.getElementById('about');
-    const offset = -100; // adjusted for proper scrolling to the about section
-    const y = aboutSection.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-
-  function scrollToExperience() {
-    const experienceSection = document.getElementById('experience');
-    const offset = -100; // adjusted for proper scrolling to the experience section
-    const y = experienceSection.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-
-// Snake Game
-const canvas = document.getElementById('snakeGame');
-const ctx = canvas.getContext('2d');
-const scoreElement = document.getElementById('score');
-
-// Game state
-let snake = [];
-let food = { x: 0, y: 0 };
-let dx = 0;
-let dy = 0;
-let score = 0;
-let gameInterval;
-let isGameRunning = false;
-
-// Constants
-const GRID_SIZE = 20;
-const TILE_COUNT = canvas.width / GRID_SIZE;
-const GAME_SPEED = 100;
-
-// Skill Images for Food
-const skillImagesSources = [
-    './Images/pythonlogo.png',
-    './Images/sqllogo.png',
-    './Images/Clogo.png',
-    './Images/csharplogo.png',
-    './Images/Java-Logo.png',
-    './Images/jslogo.png',
-    './Images/htmllogo.png',
-    './Images/csslogo.png',
-    './Images/typescript_logo.png',
-    './Images/React_Logo.png',
-    './Images/flask_logo.png',
-    './Images/git_logo.png'
-];
-
-let loadedImages = [];
-let currentFoodImage = null;
-
-// Preload images
-skillImagesSources.forEach(src => {
-    const img = new Image();
-    img.src = src;
-    loadedImages.push(img);
+'use strict';
+const menu = document.querySelector('.menu-toggle');
+const mobile = document.querySelector('#mobile-menu');
+menu.addEventListener('click', () => {
+  const open = menu.getAttribute('aria-expanded') !== 'true';
+  menu.setAttribute('aria-expanded', String(open));
+  menu.textContent = open ? 'Close −' : 'Menu +';
+  mobile.hidden = !open;
+});
+mobile.addEventListener('click', event => {
+  if (event.target.closest('a')) { mobile.hidden = true; menu.setAttribute('aria-expanded', 'false'); menu.textContent = 'Menu +'; }
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !mobile.hidden) { mobile.hidden = true; menu.setAttribute('aria-expanded', 'false'); menu.textContent = 'Menu +'; menu.focus(); }
 });
 
-function generateFood() {
-    food = {
-        x: Math.floor(Math.random() * TILE_COUNT),
-        y: Math.floor(Math.random() * TILE_COUNT)
-    };
-    // Check if food spawns on snake
-    for (let segment of snake) {
-        if (segment.x === food.x && segment.y === food.y) {
-            generateFood();
-            break;
-        }
-    }
-    // Randomly select a skill image for this food
-    if (loadedImages.length > 0) {
-        currentFoodImage = loadedImages[Math.floor(Math.random() * loadedImages.length)];
-    }
+const pages = [
+  ['Home', 'index.html', 'Page'], ['About', 'about.html', 'Page'],
+  ['Experience', 'experience.html', 'Page'], ['Skills', 'skills.html', 'Page'],
+  ['Projects', 'projects.html', 'Page'], ['Contact', '#contact', 'Section'],
+  ['TEDxThirdWard', 'project-tedx.html', 'Project'], ['NutriScan AI', 'project-nutriscan.html', 'Project'],
+  ['Adaptive Playlist Generator', 'project-playlist.html', 'Project'], ['Escape PolyLand', 'project-unity.html', 'Project'],
+  ['Open Cam Lab', 'project-opencam.html', 'Project'], ['This portfolio', 'project-portfolio.html', 'Project']
+];
+const dialog = document.querySelector('#command-dialog');
+const search = document.querySelector('#command-search');
+const results = document.querySelector('.command-results');
+function renderResults() {
+  results.replaceChildren();
+  const matches = pages.filter(([name]) => name.toLowerCase().includes(search.value.trim().toLowerCase()));
+  for (const [name, href, type] of matches) {
+    const link = document.createElement('a'); link.href = href; link.textContent = name;
+    const label = document.createElement('span'); label.textContent = type + ' ↗'; link.append(label);
+    link.addEventListener('click', () => dialog.close()); results.append(link);
+  }
+  if (!matches.length) { const empty = document.createElement('p'); empty.textContent = 'No matches. Try a page or project name.'; results.append(empty); }
 }
+function openCommand() { search.value = ''; renderResults(); dialog.showModal(); search.focus(); }
+document.querySelector('[data-command]').addEventListener('click', openCommand);
+document.querySelector('[data-close]').addEventListener('click', () => dialog.close());
+search.addEventListener('input', renderResults);
+search.addEventListener('keydown', event => {
+  if (event.key === 'ArrowDown') { event.preventDefault(); results.querySelector('a')?.focus(); }
+  if (event.key === 'Enter') { event.preventDefault(); results.querySelector('a')?.click(); }
+});
+results.addEventListener('keydown', event => {
+  const links = [...results.querySelectorAll('a')]; const index = links.indexOf(document.activeElement);
+  if (event.key === 'ArrowDown') { event.preventDefault(); links[(index + 1) % links.length]?.focus(); }
+  if (event.key === 'ArrowUp') { event.preventDefault(); if (index <= 0) search.focus(); else links[index - 1].focus(); }
+});
+dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
+document.addEventListener('keydown', event => {
+  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); if (dialog.open) dialog.close(); else openCommand(); }
+});
+document.querySelector('[data-copy]').addEventListener('click', async () => {
+  const status = document.querySelector('.copy-status');
+  try { await navigator.clipboard.writeText('tristanbeley@gmail.com'); status.textContent = 'Copied. Talk soon!'; }
+  catch { status.textContent = 'tristanbeley@gmail.com'; }
+});
 
-function resetGame() {
-    if (!canvas) return;
-    clearInterval(gameInterval);
-    snake = [{ x: 10, y: 10 }];
-    dx = 0;
-    dy = 0;
-    score = 0;
-    if(scoreElement) scoreElement.textContent = score;
-    isGameRunning = false;
-    currentFoodImage = null; // Clear image initially until start/reset calls generateFood
-    generateFood();
-    draw();
-}
-
-function startGame() {
-    if (isGameRunning) return;
-    resetGame();
-    isGameRunning = true;
-    dx = 1; // Start moving right
-    dy = 0;
-    gameInterval = setInterval(gameLoop, GAME_SPEED);
-}
-
-function gameLoop() {
-    update();
-    draw();
-}
-
-function update() {
-    // Move snake
-    const head = { x: snake[0].x + dx, y: snake[0].y + dy };
-
-    // Check collision with walls
-    if (head.x < 0 || head.x >= TILE_COUNT || head.y < 0 || head.y >= TILE_COUNT) {
-        gameOver();
-        return;
-    }
-
-    // Check collision with self
-    for (let i = 0; i < snake.length; i++) {
-        if (head.x === snake[i].x && head.y === snake[i].y) {
-            gameOver();
-            return;
-        }
-    }
-
-    snake.unshift(head);
-
-    // Check food collision
-    if (head.x === food.x && head.y === food.y) {
-        score += 10;
-        scoreElement.textContent = score;
-        generateFood();
-    } else {
-        snake.pop();
-    }
-}
-
-function draw() {
-    if (!ctx) return;
-    // Clear canvas
-    ctx.fillStyle = '#5da34ae0';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Draw snake
-    ctx.fillStyle = '#4CAF50';
-    snake.forEach((segment, index) => {
-        // Head is slightly different color
-        if (index === 0) ctx.fillStyle = '#5134d4ff';
-        else ctx.fillStyle = '#624dc0ff';
-        
-        ctx.fillRect(segment.x * GRID_SIZE, segment.y * GRID_SIZE, GRID_SIZE - 2, GRID_SIZE - 2);
-    });
-
-    // Draw food
-    if (currentFoodImage && currentFoodImage.complete) {
-        // Draw the image if loaded
-        // Make food slightly larger (1.5x grid size) and center it
-        const scale = 1.5;
-        const size = GRID_SIZE * scale;
-        const offset = (size - GRID_SIZE) / 2;
-        
-         ctx.drawImage(
-            currentFoodImage,
-            food.x * GRID_SIZE - offset,
-            food.y * GRID_SIZE - offset,
-            size,
-            size
-        );
-    } else {
-        // Fallback to red dot if image isn't ready
-        ctx.fillStyle = '#FF5252';
-        ctx.beginPath();
-        ctx.arc(
-            food.x * GRID_SIZE + GRID_SIZE/2, 
-            food.y * GRID_SIZE + GRID_SIZE/2, 
-            GRID_SIZE/2 - 2, 
-            0, 
-            Math.PI * 2
-        );
-        ctx.fill();
-    }
-}
-
-// Modal Logic
-const modal = document.getElementById("game-modal");
-const closeModalSpan = document.getElementsByClassName("close-modal")[0];
-const finalScoreSpan = document.getElementById("final-score");
-
-function gameOver() {
-    clearInterval(gameInterval);
-    isGameRunning = false;
-    // alert(`Game Over! Score: ${score}`);
-    if (finalScoreSpan) finalScoreSpan.textContent = score;
-    if (modal) modal.style.display = "block";
-}
-
-function restartGameFromModal() {
-    if (modal) modal.style.display = "none";
-    startGame();
-}
-
-function closeModal() {
-    if (modal) modal.style.display = "none";
-    resetGame();
-}
-
-// Close modal if user clicks outside of it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        closeModal();
-    }
-}
-
-function handleInput(e) {
-    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
-        e.preventDefault(); // Prevent scrolling
-    }
-
-    if (!isGameRunning) return;
-
-    switch(e.key) {
-        case 'ArrowUp':
-            if (dy !== 1) { dx = 0; dy = -1; }
-            break;
-        case 'ArrowDown':
-            if (dy !== -1) { dx = 0; dy = 1; }
-            break;
-        case 'ArrowLeft':
-            if (dx !== 1) { dx = -1; dy = 0; }
-            break;
-        case 'ArrowRight':
-            if (dx !== -1) { dx = 1; dy = 0; }
-            break;
-    }
-}
-
-function initSkillsFadeIn() {
-    const skillsSection = document.getElementById('skills');
-    const skillItems = document.querySelectorAll('.skill-item, .skill-item2');
-
-    if (!skillsSection || skillItems.length === 0) return;
-
-    document.body.classList.add('skills-reveal-ready');
-
-    // Fallback for browsers that don't support IntersectionObserver.
-    if (!('IntersectionObserver' in window)) {
-        skillItems.forEach(item => item.classList.add('skill-visible'));
-        return;
-    }
-
-    let hasAnimated = false;
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting || hasAnimated) return;
-
-            hasAnimated = true;
-            skillItems.forEach((item, index) => {
-                item.style.transitionDelay = `${index * 70}ms`;
-                item.classList.add('skill-visible');
-
-                // Clear delay after reveal so hover responds immediately.
-                setTimeout(() => {
-                    item.style.transitionDelay = '0ms';
-                }, index * 70 + 700);
-            });
-
-            observer.disconnect();
-        });
-    }, {
-        root: null,
-        threshold: 0.25
-    });
-
-    observer.observe(skillsSection);
-}
-
-// Event Listeners
-document.addEventListener('keydown', handleInput);
-initSkillsFadeIn();
-
-// Initial draw logic 
-// Wait for DOM content to be loaded if script is in head, but it is at end of body so it's fine.
-if (canvas) {
-    resetGame();
-}
-
-// Project Section Animations
-function initProjectAnimations() {
-    const cards = document.querySelectorAll('.details-container-projects');
-    
-    if (cards.length === 0) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('animate-in');
-                }, index * 100);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    cards.forEach(card => observer.observe(card));
-}
-
-// Initialize project animations when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initProjectAnimations);
-} else {
-    initProjectAnimations();
-}
-
-// Experience Section Animations
-function initExperienceAnimations() {
-    const cards = document.querySelectorAll('.featured-exp-card');
-
-    if (cards.length === 0) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('animate-in');
-                }, index * 120);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    cards.forEach(card => observer.observe(card));
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initExperienceAnimations);
-} else {
-    initExperienceAnimations();
-}
-
-
-
+document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  let count = 0;
+  document.querySelectorAll('[data-category]').forEach(card => { card.hidden = button.dataset.filter !== 'All' && card.dataset.category !== button.dataset.filter; if (!card.hidden) count++; });
+  document.querySelector('#filter-status').textContent = `${count} ${count === 1 ? 'project' : 'projects'} shown`;
+}));
+const previews = {
+  tedx: ['TEDxThirdWard', 'A public website and a custom admin console for the people behind the event.', 'red'],
+  nutriscan: ['NutriScan AI', 'A 36-hour nutrition prototype. Two HackWestern awards. Built together under a deadline.', 'green'],
+  playlist: ['Adaptive Playlist Generator', 'Mood, context, and a swipe-style interface for making a Spotify playlist your own.', 'purple']
+};
+document.querySelectorAll('[data-preview]').forEach(button => button.addEventListener('click', () => {
+  const slug = button.dataset.preview; const [title, description, color] = previews[slug];
+  document.querySelectorAll('[data-preview]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  document.querySelector('#stage-title').textContent = title;
+  document.querySelector('#stage-description').textContent = description;
+  document.querySelector('#stage-link').href = `project-${slug}.html`;
+  const art = document.querySelector('#stage-art');
+  const source = document.querySelector(`.project-card a[href="project-${slug}.html"]`).firstElementChild;
+  art.replaceChildren(source.cloneNode(true)); art.className = `stage-art project-art ${color}`;
+}));
