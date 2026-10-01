@@ -1,4 +1,4 @@
-# Tristan Beley — portfolio
+# Tristan Beley - portfolio
 
 A static, multi-page portfolio. No runtime packages, client framework, web-font requests, or build service required.
 
@@ -27,7 +27,7 @@ Browser checks: desktop and mobile navigation, project previews, category filter
 
 ## Content provenance
 
-Biography, work history, project details, awards, and external destinations come from the original portfolio. The intentionally hidden ConvergentIS role remains unpublished. Existing PDFs are preserved. The original Unity video link pointed to a missing file and is omitted. No performance metrics, employment results, or adoption statistics were invented.
+Biography, work history, project details, awards, and external destinations come from the original portfolio. Both ConvergentIS roles and the current skills list are sourced from WorthTheCall_TristanBeley_Resume.pdf. Existing PDFs are preserved. The original Unity video link pointed to a missing file and is omitted. Role titles, dates, and engineering scope are taken from the supplied resume.
 
 ## Design references
 
@@ -36,3 +36,5 @@ Original HTML/CSS implementations informed by 21st.dev's [cards and grids](https
 ## Performance
 
 HTML contains page content before JavaScript runs. Images use WebP, explicit dimensions, and lazy loading below the fold. The portrait is eager-loaded. The original 12.7 MB hockey image is served as a compressed derivative. Shared assets are cacheable by the host. Actual load times depend on hosting, connection, and device; no production Lighthouse score is claimed.
+
+The skills wheel and directory share their content in `tools/skills_data.py`. Each category can be selected by mouse, touch, or keyboard. Wheel motion runs only after interaction. The original archive remains untouched.

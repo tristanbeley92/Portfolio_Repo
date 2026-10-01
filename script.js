@@ -79,3 +79,45 @@ document.querySelectorAll('[data-preview]').forEach(button => button.addEventLis
   const source = document.querySelector(`.project-card a[href="project-${slug}.html"]`).firstElementChild;
   art.replaceChildren(source.cloneNode(true)); art.className = `stage-art project-art ${color}`;
 }));
+
+// The static directory is also the data source for the optional wheel.
+const rotor = document.querySelector('#wheel-rotor');
+if (rotor) {
+  const categoryButtons = [...document.querySelectorAll('[data-skill-category]')];
+  let skills = [], selected = 0, turn = 0;
+  function selectSkill(index, direction) {
+    const next = (index + skills.length) % skills.length;
+    let delta = next - selected;
+    if (direction) delta = direction;
+    else if (delta > skills.length / 2) delta -= skills.length;
+    else if (delta < -skills.length / 2) delta += skills.length;
+    turn -= delta * 360 / skills.length;
+    selected = next;
+    rotor.style.setProperty('--turn', `${turn}deg`);
+    [...rotor.children].forEach((button, i) => button.setAttribute('aria-pressed', String(i === selected)));
+    document.querySelector('#wheel-name').textContent = skills[selected].dataset.skill;
+    document.querySelector('#wheel-description').textContent = skills[selected].querySelector('p').textContent;
+    document.querySelector('.wheel-count').textContent = `${String(selected + 1).padStart(2, '0')} / ${String(skills.length).padStart(2, '0')}`;
+  }
+  function chooseCategory(category) {
+    categoryButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.skillCategory === category)));
+    skills = [...document.querySelectorAll('[data-skill]')].filter(item => item.dataset.skillGroup === category);
+    selected = 0; turn = 0;
+    rotor.replaceChildren();
+    document.querySelector('#wheel-category').textContent = category;
+    skills.forEach((skill, index) => {
+      const button = document.createElement('button');
+      button.type = 'button'; button.className = 'wheel-skill';
+      button.style.setProperty('--angle', `${index * 360 / skills.length}deg`);
+      button.textContent = skill.dataset.skill;
+      button.addEventListener('click', () => selectSkill(index));
+      rotor.append(button);
+    });
+    selectSkill(0);
+  }
+  categoryButtons.forEach(button => button.addEventListener('click', () => chooseCategory(button.dataset.skillCategory)));
+  document.querySelectorAll('[data-wheel-step]').forEach(button => button.addEventListener('click', () => {
+    const step = Number(button.dataset.wheelStep); selectSkill(selected + step, step);
+  }));
+  chooseCategory(categoryButtons[0].dataset.skillCategory);
+}

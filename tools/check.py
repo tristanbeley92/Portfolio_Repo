@@ -31,3 +31,15 @@ assert (ROOT / 'assets/hockey.webp').stat().st_size < 200000
 print(f'PASS: {len(pages)} pages, local links and fragments, unique IDs, and asset budgets.')
 print('JavaScript bytes:', (ROOT / 'script.js').stat().st_size)
 print('Hockey image bytes:', (ROOT / 'assets/hockey.webp').stat().st_size)
+
+# Content requirements for the current resume update.
+for name in pages:
+    content = (ROOT / name).read_text(encoding='utf-8')
+    assert '\u2014' not in content, f'{name}: em dash in active page'
+    assert 'Images/WorthTheCall_TristanBeley_Resume.pdf' in content
+experience = (ROOT / 'experience.html').read_text(encoding='utf-8')
+assert 'Junior Software Engineer' in experience
+assert 'Cloud/Software Engineer Intern' in experience
+assert 'Aug 2026 to Present' in experience
+assert 'May 2026 to Aug 2026' in experience
+print('PASS: both ConvergentIS roles, current resume links, and no active-page em dashes.')
