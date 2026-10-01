@@ -38,3 +38,5 @@ Original HTML/CSS implementations informed by 21st.dev's [cards and grids](https
 HTML contains page content before JavaScript runs. Images use WebP, explicit dimensions, and lazy loading below the fold. The portrait is eager-loaded. The original 12.7 MB hockey image is served as a compressed derivative. Shared assets are cacheable by the host. Actual load times depend on hosting, connection, and device; no production Lighthouse score is claimed.
 
 The skills wheel and directory share their content in `tools/skills_data.py`. Each category can be selected by mouse, touch, or keyboard. Wheel motion runs only after interaction. The original archive remains untouched.
+
+Drag the skills wheel with a mouse or touch, then release to coast and snap to the top marker. `wheel.js` is loaded only on the Skills page; `wheel-motion.mjs` holds the momentum and snapping math. Animation frames stop when settled or hidden. Reduced motion skips momentum. Personal skill stories are grounded in the resume and existing project write-ups.

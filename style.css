@@ -1564,3 +1564,30 @@ dialog>p {
 @media(max-width:360px) {
   .wheel-skill { width:58px; margin-left:-29px; }
 }
+
+/* Direct manipulation owns the transform; no CSS lag behind the pointer. */
+.wheel-rotor, .wheel-skill { transition:none; }
+.skill-wheel { touch-action:none; user-select:none; cursor:grab; }
+.skill-wheel.is-dragging, .skill-wheel.is-dragging .wheel-skill { cursor:grabbing; }
+.wheel-skill { cursor:grab; }
+.wheel-pointer { position:absolute; top:20px; left:50%; transform:translateX(-50%); color:var(--blue); font-size:20px; }
+.wheel-readout { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:25px; }
+.wheel-readout .wheel-count { margin:0; }
+#wheel-state { font:11px var(--mono); color:var(--muted); }
+.story-label { font:11px var(--mono); color:var(--blue); }
+.skill-story-panel h2 { margin:14px 0 20px; }
+.skill-story-panel { min-height:240px; }
+.skill-story-panel p { color:var(--ink); font-size:16px; }
+#wheel-help { font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:20px; }
+.is-spinning .wheel-skill[aria-pressed=true] { background:var(--bg); color:var(--ink); border-color:var(--line); box-shadow:none; }
+@media(max-width:1100px) {
+  .wheel-aside { max-width:560px; margin:auto; padding:0 25px; }
+  .wheel-aside .skill-story-panel h2 { display:block; }
+  .skill-story-panel { min-height:0; }
+}
+@media(max-width:700px) {
+  .wheel-pointer { top:12px; font-size:16px; }
+  .skill-story-panel h2 { font-size:30px; }
+  .skill-story-panel p { font-size:14px; }
+  .wheel-readout { margin-bottom:20px; }
+}

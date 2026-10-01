@@ -73,6 +73,8 @@ def footer():
 
 def page(slug,title,description,body):
     html=f'''<!doctype html><html lang="en" id="top"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{escape(description,quote=True)}"><meta name="theme-color" content="#f6f5f1"><title>{title} | Tristan Beley</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="script.js" defer></script><noscript><style>.skills-explorer,.command-trigger,.menu-toggle,.filters,.stage-tabs,[data-copy]{{display:none!important}}@media(max-width:700px){{#mobile-menu[hidden]{{display:grid!important}}}}</style></noscript></head><body>{header('projects' if slug.startswith('project-') else slug)}<main id="main">{body}</main>{footer()}</body></html>'''
+    if slug == 'skills':
+        html = html.replace('</head>', '<script type="module" src="wheel.js"></script></head>')
     (ROOT/f'{slug}.html').write_text(html,encoding='utf-8')
 
 def intro(number,kicker,title,desc):
