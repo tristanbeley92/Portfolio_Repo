@@ -40,3 +40,5 @@ HTML contains page content before JavaScript runs. Images use WebP, explicit dim
 The skills wheel and directory share their content in `tools/skills_data.py`. Each category can be selected by mouse, touch, or keyboard. Wheel motion runs only after interaction. The original archive remains untouched.
 
 Drag the skills wheel with a mouse or touch, then release to coast and snap to the top marker. `wheel.js` is loaded only on the Skills page; `wheel-motion.mjs` holds the momentum and snapping math. Animation frames stop when settled or hidden. Reduced motion skips momentum. Personal skill stories are grounded in the resume and existing project write-ups.
+
+Career update, 2026-10-29: Founderless is the current Co-Founder and CTO role, dated October 2026 onward. RoleColorFinder is retained as a past role, October 2025 to October 2026, matching the current LinkedIn Experience entry. Founderless copy is grounded in its public site and the user’s prototype contribution; early-access plans are not described as proven autonomous business results. Existing resumes and the original archive are preserved.
