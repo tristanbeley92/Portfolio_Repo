@@ -18,6 +18,7 @@ const pages = [
   ['Home', 'index.html', 'Page'], ['About', 'about.html', 'Page'],
   ['Experience', 'experience.html', 'Page'], ['Skills', 'skills.html', 'Page'],
   ['Projects', 'projects.html', 'Page'], ['Contact', '#contact', 'Section'],
+  ['Poller Hub', 'project-poller-hub.html', 'Project'],
   ['TEDxThirdWard', 'project-tedx.html', 'Project'], ['NutriScan AI', 'project-nutriscan.html', 'Project'],
   ['Adaptive Playlist Generator', 'project-playlist.html', 'Project'], ['Escape PolyLand', 'project-unity.html', 'Project'],
   ['Open Cam Lab', 'project-opencam.html', 'Project'], ['This portfolio', 'project-portfolio.html', 'Project']

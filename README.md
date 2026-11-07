@@ -8,7 +8,7 @@ Run `python -m http.server 4173` and open http://localhost:4173. Deploy the repo
 
 ## Edit
 
-- `tools/build.py`: shared templates, biography, experience, toolkit, and six project write-ups. Run `python tools/build.py` after editing.
+- `tools/build.py`: shared templates, biography, experience, toolkit, and seven project write-ups. Run `python tools/build.py` after editing.
 - `style.css`: responsive layouts, colors, motion, and component styles.
 - `script.js`: mobile navigation, project filtering, preview switching, copy email, and Ctrl/Cmd+K search.
 - `assets/`: compressed WebP derivatives and favicon. Originals remain in `Images/`.
@@ -42,3 +42,5 @@ The skills wheel and directory share their content in `tools/skills_data.py`. Ea
 Drag the skills wheel with a mouse or touch, then release to coast and snap to the top marker. `wheel.js` is loaded only on the Skills page; `wheel-motion.mjs` holds the momentum and snapping math. Animation frames stop when settled or hidden. Reduced motion skips momentum. Personal skill stories are grounded in the resume and existing project write-ups.
 
 Career update, 2026-10-29: Founderless is the current Co-Founder and CTO role, dated October 2026 onward. RoleColorFinder is retained as a past role, October 2025 to October 2026, matching the current LinkedIn Experience entry. Founderless copy is grounded in its public site and the user’s prototype contribution; early-access plans are not described as proven autonomous business results. Existing resumes and the original archive are preserved.
+
+Poller Hub case study: sourced from the five local watcher READMEs, SAP delivery/state implementation, and dashboard worker documentation. The original three dashboard monitors and the two standalone SAP watchers are described separately. No personal notification topics, credentials, or runtime data are published.

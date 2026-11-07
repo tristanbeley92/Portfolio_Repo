@@ -1591,3 +1591,9 @@ dialog>p {
   .skill-story-panel p { font-size:14px; }
   .wheel-readout { margin-bottom:20px; }
 }
+
+.poller-art{display:flex;flex-direction:column;justify-content:center;gap:1.5rem;width:100%;padding:clamp(1.25rem,4vw,3rem)}
+.poller-art strong{font-size:clamp(1.8rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.04em}
+.poller-sources{display:flex;flex-wrap:wrap;gap:.5rem;max-width:32rem}
+.poller-sources span{border:1px solid currentColor;border-radius:999px;padding:.4rem .7rem;font-size:.8rem}
+.poller-art>.mono{font-size:.65rem;line-height:1.6}
